@@ -1,7 +1,7 @@
 {
   "id": "2026-10-17-a4ba",
   "created": "2026-10-17T16:18:43+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Engagement",
   "topic": "Microservices vs Modular Monolith for New Projects",
   "post": {
@@ -75,6 +75,27 @@
     "slide_05.jpg",
     "slide_06.jpg"
   ],
-  "results": {},
-  "control_message_id": 13
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7517184346710208512/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122098666227516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/Del__rKjphu/"
+    }
+  },
+  "control_message_id": 13,
+  "photo_ids": [
+    "122098665897516061",
+    "122098665951516061",
+    "122098665999516061",
+    "122098666065516061",
+    "122098666119516061",
+    "122098666167516061"
+  ]
 }
