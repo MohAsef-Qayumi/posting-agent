@@ -5,9 +5,9 @@
 author:
   name: "Mohammad Asef Qayumi"
   headline: "Full-stack developer | MERN · Flutter · Python · Java"
-  location: "Herat, Afghanistan"
+  location: ""
   instagram_handle: "@mohammadasefqayumi"
-  initials: "AQ"   # shown in the slide avatar
+  initials: "MAQ"   # shown in the slide avatar
   # How you sound. Claude uses this to write in your voice.
   voice: >
     Friendly, practical and confident. Speaks from real hands-on experience as a
@@ -16,7 +16,7 @@ author:
 
 startup:
   # Fill these in when ready — Thursday posts will use them.
-  name: ""
+  name: "JAEXS Solutions"
   one_liner: "A startup that finds generic, reusable solutions for existing everyday problems."
   details: ""
   website: ""

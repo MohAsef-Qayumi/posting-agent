@@ -121,4 +121,6 @@ def generate_post(pillar_override: str | None = None, avoid_topic: str | None = 
     post["pillar"] = slot["pillar"]
     post["hashtags"] = [h.lstrip("#").replace(" ", "") for h in post["hashtags"] if h.strip()][:25]
     post["slides"] = [s for s in post["slides"] if s["title"].strip() or s["code"].strip()]
+    if "#" not in post["linkedin_text"] and post["hashtags"]:  # some models forget LinkedIn's hashtags
+        post["linkedin_text"] = post["linkedin_text"].rstrip() + "\n\n" + " ".join(f"#{t}" for t in post["hashtags"][:4])
     return post

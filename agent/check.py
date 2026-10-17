@@ -37,7 +37,7 @@ def check() -> bool:
 
     # Telegram
     try:
-        r = requests.get(f"https://api.telegram.org/bot{env('TELEGRAM_BOT_TOKEN')}/getMe", timeout=20).json()
+        r = requests.get(f"https://api.telegram.org/bot{env('TELEGRAM_BOT_TOKEN')}/getMe", timeout=60).json()
         if not r.get("ok"):
             raise RuntimeError(r.get("description"))
         env("TELEGRAM_CHAT_ID")
