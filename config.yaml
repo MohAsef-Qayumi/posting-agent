@@ -27,7 +27,7 @@ platforms:
   facebook: true
   instagram: true
 
-# Content pillar per weekday (Herat local time).
+# Content pillar per weekday (Pakistan time).
 rotation:
   monday:    { pillar: "AI",           brief: "Practical AI news, tools or techniques developers and professionals can use today." }
   tuesday:   { pillar: "Career",       brief: "Career tips for developers: freelancing, interviews, portfolios, remote work, growth." }
@@ -45,9 +45,15 @@ feeds:
   - https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
   - https://dev.to/feed/top/week
 
-claude:
-  model: "claude-opus-5-5"
-  effort: "medium"
+llm:
+  # "auto" = first provider whose API key is set: claude → gemini → openrouter.
+  # Start free with Gemini/OpenRouter; add ANTHROPIC_API_KEY later and Claude takes over.
+  provider: "auto"
+  models:
+    claude: "claude-opus-5-5"
+    gemini: "gemini-flash-latest"          # free tier; always points at the current Flash model
+    openrouter: "openai/gpt-oss-120b:free" # any model ending in ":free" from openrouter.ai/models
+  claude_effort: "medium"
 
 # Instagram carousel slide count (cover + content + CTA). Instagram allows up to 20.
 slides:
@@ -56,7 +62,7 @@ slides:
 
 # API versions — bump if the platforms deprecate them.
 api_versions:
-  meta_graph: "v23.0"
+  meta_graph: "v26.0"
   linkedin: "202608"
 
 # How many days of history to send Claude so it avoids repeating topics.

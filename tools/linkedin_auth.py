@@ -5,6 +5,7 @@
 Your LinkedIn app must list this redirect URL: http://localhost:8765/callback
 Tokens last 60 days — run this again when the Telegram bot reminds you.
 """
+import html
 import secrets
 import sys
 import webbrowser
@@ -34,7 +35,8 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.end_headers()
-        self.wfile.write("<h2>Done — you can close this tab and return to the terminal.</h2>".encode())
+        message = "Something went wrong — check the terminal." if "error" in result else "Done — you can close this tab and return to the terminal."
+        self.wfile.write(f"<h2>{message}</h2>".encode())
 
     def log_message(self, *args):
         pass
@@ -50,7 +52,16 @@ while not result:
     server.handle_request()
 
 if "error" in result:
-    sys.exit(f"LinkedIn returned an error: {result.get('error_description', result['error'])}")
+    description = html.unescape(result.get("error_description", result["error"]))
+    hint = ""
+    if "openid" in description or "profile" in description:
+        hint = ("\n\n👉 Fix: in your LinkedIn app → Products tab, add "
+                "'Sign In with LinkedIn using OpenID Connect', then run this again.")
+    elif "w_member_social" in description:
+        hint = "\n\n👉 Fix: in your LinkedIn app → Products tab, add 'Share on LinkedIn', then run this again."
+    elif "redirect" in description:
+        hint = f"\n\n👉 Fix: in your LinkedIn app → Auth tab, add this redirect URL exactly: {REDIRECT}"
+    sys.exit(f"LinkedIn returned an error: {description}{hint}")
 
 token = requests.post("https://www.linkedin.com/oauth/v2/accessToken", data={
     "grant_type": "authorization_code", "code": result["code"], "redirect_uri": REDIRECT,

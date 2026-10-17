@@ -9,7 +9,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = ROOT / "state"
 DRAFTS_DIR = STATE_DIR / "drafts"
-TZ = ZoneInfo("Asia/Kabul")  # Herat local time
+TZ = ZoneInfo("Asia/Karachi")  # Pakistan time (UTC+5)
 
 try:
     from dotenv import load_dotenv

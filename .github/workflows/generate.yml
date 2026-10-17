@@ -2,7 +2,7 @@ name: Generate daily draft
 
 on:
   schedule:
-    - cron: "30 3 * * *"   # 08:00 Herat time (UTC+4:30)
+    - cron: "0 3 * * *"   # 08:00 Pakistan time (UTC+5)
   workflow_dispatch:
     inputs:
       pillar:
@@ -41,6 +41,8 @@ jobs:
       - name: Generate draft and send to Telegram
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           LINKEDIN_TOKEN_EXPIRES: ${{ secrets.LINKEDIN_TOKEN_EXPIRES }}

@@ -23,18 +23,26 @@ Do these once, in order. Total time: about 1–1.5 hours. Each step ends with th
    ```
    → **`TELEGRAM_CHAT_ID`**. (The bot only obeys this chat id, so nobody else can approve posts.)
 
-## 3. Claude API key (5 min)
+## 3. AI writer key (5 min)
 
-1. Go to **console.anthropic.com** → sign up → **Billing** → add ~$5 credit (lasts months; daily posts cost roughly $1–3/month).
-2. **API keys → Create key** → **`ANTHROPIC_API_KEY`**.
+You need **one** of these. Start free, and switch to Claude later by just adding its key — the agent automatically uses the best key it finds (Claude → Gemini → OpenRouter).
+
+| Option | Cost | Get the key | Secret name |
+|---|---|---|---|
+| **Google Gemini** | Free tier | aistudio.google.com → *Get API key* | `GEMINI_API_KEY` |
+| **OpenRouter** | Free models | openrouter.ai → *Keys* | `OPENROUTER_API_KEY` |
+| **Claude** (best quality) | ~$1–3/month | console.anthropic.com → Billing (add ~$5) → *API keys* | `ANTHROPIC_API_KEY` |
+
+Tip: start with Gemini and keep an OpenRouter key as backup — if Gemini hits a free limit, delete its secret and OpenRouter takes over.
 
 ## 4. Meta developer app — Facebook + Instagram (20–30 min)
 
 1. Go to **developers.facebook.com** → log in with your Facebook account → **My Apps → Create app**.
 2. Choose the use cases **"Manage everything on your Page"** and **"Manage messaging & content on Instagram"** (Meta renames these occasionally — pick the Page + Instagram publishing ones). App type: **Business**.
 3. In **App settings → Basic**: copy **App ID** and **App Secret**. Also fill *Privacy Policy URL* (any public page works, e.g. a short Google Doc or Notion page that says what the app does), pick a category and an icon → Save.
-4. Set the app to **Live / Published** (toggle at the top). Posts made by an app in development mode may only be visible to you.
-   You don't need App Review — the app only posts to your own Page, and you're its admin.
+4. If the wizard shows **"Publishing requirements"** (Business verification + App Review) → just click **Next** and finish creating the app.
+   You don't need either one — they're only for apps that access *other people's* accounts. Your app only posts to your own Page and Instagram, and as the app's admin you already have access.
+   Leave the app in **Development** mode for now. After your first real post, open your Page in a private/logged-out window: if the post is visible, you're done; if not, switch the app to **Live** (toggle at the top of the app dashboard).
 5. Open **developers.facebook.com/tools/explorer** (Graph API Explorer):
    - *Meta App*: your app · *User or Page*: **Get User Access Token**
    - Add these permissions: `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `instagram_basic`, `instagram_content_publish`, `business_management`
@@ -91,7 +99,7 @@ Open the `preview/…` folder to see the slides. Want a different style or tone?
 
    | Secret | From step |
    |---|---|
-   | `ANTHROPIC_API_KEY` | 3 |
+   | `GEMINI_API_KEY` / `OPENROUTER_API_KEY` / `ANTHROPIC_API_KEY` (whichever you have) | 3 |
    | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | 2 |
    | `FB_PAGE_ID`, `FB_PAGE_ACCESS_TOKEN`, `IG_USER_ID` | 4 |
    | `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`, `LINKEDIN_TOKEN_EXPIRES` | 5 |
@@ -100,7 +108,7 @@ Open the `preview/…` folder to see the slides. Want a different style or tone?
 5. First run: **Actions** tab → **Generate daily draft → Run workflow**. Within ~3 minutes the draft arrives in Telegram.
 6. Tap **✅ Approve & post**, then **Actions → Process approvals → Run workflow** (or wait — it runs every 30 min automatically). You'll get a Telegram message with links to the live posts. 🎉
 
-From now on it runs by itself: a draft every day at **08:00 Herat time**, published within 30 minutes of your approval.
+From now on it runs by itself: a draft every day at **08:00 Pakistan time**, published within 30 minutes of your approval.
 
 ---
 

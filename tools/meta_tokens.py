@@ -8,7 +8,7 @@ from datetime import datetime
 
 import requests
 
-GRAPH = "https://graph.facebook.com/v23.0"
+GRAPH = "https://graph.facebook.com/v26.0"
 
 
 def get(path: str, **params) -> dict:

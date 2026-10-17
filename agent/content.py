@@ -1,9 +1,6 @@
-"""Writes the day's posts with Claude: one topic, tailored per platform, plus Instagram carousel slides."""
-import json
-
-import anthropic
-
+"""Writes the day's posts with an LLM: one topic, tailored per platform, plus Instagram carousel slides."""
 from .config import load_config, now
+from .llm import complete_json
 from .sources import fetch_headlines
 from .store import recent_topics
 
@@ -118,23 +115,9 @@ def generate_post(pillar_override: str | None = None, avoid_topic: str | None = 
         history="\n".join(topics[-40:]) or "(none yet)",
     )
 
-    client = anthropic.Anthropic()
-    response = client.beta.messages.create(
-        model=cfg["claude"]["model"],
-        max_tokens=16000,
-        system=system,
-        messages=[{"role": "user", "content": user}],
-        output_config={"effort": cfg["claude"]["effort"], "format": {"type": "json_schema", "schema": SCHEMA}},
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-    )
-    if response.stop_reason == "refusal":
-        raise RuntimeError(f"Claude declined to write this post: {response.stop_details}")
-    if response.stop_reason == "max_tokens":
-        raise RuntimeError("Claude's response was cut off (max_tokens)")
-
-    text = next(b.text for b in response.content if b.type == "text")
-    post = json.loads(text)
+    post, written_by = complete_json(cfg, system, user, SCHEMA)
+    print(f"[content] written by {written_by}")
+    post["written_by"] = written_by
     post["pillar"] = slot["pillar"]
     post["hashtags"] = [h.lstrip("#").replace(" ", "") for h in post["hashtags"] if h.strip()][:25]
     post["slides"] = [s for s in post["slides"] if s["title"].strip() or s["code"].strip()]

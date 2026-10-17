@@ -4,6 +4,7 @@ from datetime import date
 import requests
 
 from .config import env, load_config, now
+from .llm import pick_provider
 
 
 def _line(ok: bool, name: str, detail: str) -> bool:
@@ -15,14 +16,24 @@ def check() -> bool:
     cfg = load_config()
     results = []
 
-    # Anthropic
+    # AI writer — a tiny real request to whichever provider is active
     try:
-        import anthropic
+        from .llm import complete_json
 
-        anthropic.Anthropic().models.retrieve(cfg["claude"]["model"])
-        results.append(_line(True, "Claude API", f"key works, model {cfg['claude']['model']} available"))
+        schema = {"type": "object", "properties": {"ok": {"type": "string"}}, "required": ["ok"], "additionalProperties": False}
+        provider = pick_provider(cfg)
+        if provider == "claude":
+            _, used = complete_json(cfg, "Reply in JSON.", 'Return {"ok": "yes"}.', schema)
+        else:
+            from . import llm
+
+            model = cfg["llm"]["models"][provider]
+            sys_prompt = 'Respond with only the JSON object {"ok": "yes"}.'
+            raw = llm._gemini(model, sys_prompt, "ping") if provider == "gemini" else llm._openai_compatible(provider, model, sys_prompt, "ping")
+            used = f"{provider}/{model}" if raw.strip() else ""
+        results.append(_line(bool(used), "AI writer", f"{used} works"))
     except Exception as e:
-        results.append(_line(False, "Claude API", str(e)[:200]))
+        results.append(_line(False, "AI writer", str(e)[:200]))
 
     # Telegram
     try:
