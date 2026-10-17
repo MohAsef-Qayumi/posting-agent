@@ -85,7 +85,7 @@ Open the `preview/…` folder to see the slides. Want a different style or tone?
 
 ## 7. Put it on GitHub Actions (15 min)
 
-1. Create a **private** repository on github.com (e.g. `posting-agent`). Private keeps your drafts and history to yourself; the free plan includes 2,000 Actions minutes/month and this uses about 1,200.
+1. Create a **private** repository on github.com (e.g. `posting-agent`). Private keeps your drafts and history to yourself; the free plan includes 2,000 Actions minutes/month and this uses under 1,000.
 2. Push this folder:
    ```
    git init
@@ -103,12 +103,81 @@ Open the `preview/…` folder to see the slides. Want a different style or tone?
    | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | 2 |
    | `FB_PAGE_ID`, `FB_PAGE_ACCESS_TOKEN`, `IG_USER_ID` | 4 |
    | `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`, `LINKEDIN_TOKEN_EXPIRES` | 5 |
+   | `THREADS_USER_ID`, `THREADS_ACCESS_TOKEN`, `THREADS_TOKEN_EXPIRES` | 8 |
+   | `GH_PAT`, `WORKER_URL`, `WORKER_SECRET` (instant mode) | 9 |
 
 4. Repo → **Settings → Actions → General → Workflow permissions** → **Read and write permissions** → Save. (The agent saves its drafts/history back to the repo.)
 5. First run: **Actions** tab → **Generate daily draft → Run workflow**. Within ~3 minutes the draft arrives in Telegram.
-6. Tap **✅ Approve & post**, then **Actions → Process approvals → Run workflow** (or wait — it runs every 30 min automatically). You'll get a Telegram message with links to the live posts. 🎉
+6. Tap **✅ Approve & post**, then **Actions → Process approvals → Run workflow** (or wait — it runs every hour automatically, or instantly once step 9 is done). You'll get a Telegram message with links to the live posts. 🎉
 
-From now on it runs by itself: a draft every day at **08:00 Pakistan time**, published within 30 minutes of your approval.
+From now on it runs by itself: a draft every day at **08:00 Pakistan time**.
+
+## 8. Threads (15 min)
+
+Threads uses its own Meta app (Meta keeps the Threads API separate from the Page/Instagram one).
+
+1. **developers.facebook.com → My Apps → Create app** → use case **"Access the Threads API"** → name it (e.g. *posting-agent-threads*) → create.
+2. **Use cases → Access the Threads API → Customize**:
+   - *Permissions*: add **`threads_content_publish`** (`threads_basic` is already there).
+   - *Settings*: in **Redirect Callback URLs**, **Uninstall Callback URL** and **Delete Callback URL**, enter:
+     ```
+     https://localhost:8765/callback
+     ```
+     → Save.
+3. **App roles → Roles → Add People → Threads Tester** → your Threads username.
+   Then in the **Threads app** (phone): **Settings → Account → Website permissions → Invites → Accept**.
+4. **App settings → Basic** → copy the **Threads app ID** and **Threads app secret** (not the normal App ID).
+5. Run:
+   ```
+   python tools/threads_auth.py <THREADS_APP_ID> <THREADS_APP_SECRET>
+   ```
+   Your browser opens → **Allow** → the page then shows *"can't reach this page"* — that's expected. Copy the **whole address** from the address bar and paste it into the terminal.
+   → **`THREADS_USER_ID`**, **`THREADS_ACCESS_TOKEN`**, **`THREADS_TOKEN_EXPIRES`** → add to `.env` and GitHub Secrets.
+
+   ⏰ The token lasts 60 days, but with **`GH_PAT`** from step 9 the agent renews it every week by itself. Without it, the bot reminds you a week before it expires.
+
+## 9. Instant mode — Cloudflare worker (20 min, free)
+
+Without this, your taps and messages wait for the hourly run. With it, the bot reacts instantly and posts go live about a minute after you tap ✅.
+
+**a) A random secret** — run:
+```
+python tools/telegram_webhook.py secret
+```
+→ **`WORKER_SECRET`**. Add it to `.env`.
+
+**b) A GitHub token** so the worker can start your workflows: **github.com/settings/personal-access-tokens/new** (fine-grained)
+- *Token name*: posting-agent · *Expiration*: the longest allowed
+- *Repository access*: **Only select repositories → posting-agent**
+- *Permissions → Repository*: **Actions: Read and write**, **Secrets: Read and write**
+- Generate → copy → **`GH_PAT`** (add it as a GitHub secret too — that's what renews the Threads token).
+
+**c) The worker** — sign up free at **dash.cloudflare.com**, then:
+1. **Storage & databases → Workers KV → Create** → name `posting-agent-queue`.
+2. **Compute → Workers & Pages → Create → Start with Hello World** → name `posting-agent` → **Deploy**.
+3. **Edit code** → delete everything → paste the contents of `worker/worker.js` → **Deploy**.
+4. Worker → **Settings → Bindings → Add → KV namespace** → variable name **`QUEUE`** → pick `posting-agent-queue` → Save.
+5. Worker → **Settings → Variables and Secrets → Add**:
+
+   | Type | Name | Value |
+   |---|---|---|
+   | Text | `GH_REPO` | `<your-username>/posting-agent` |
+   | Secret | `TELEGRAM_BOT_TOKEN` | same as in `.env` |
+   | Secret | `TELEGRAM_CHAT_ID` | same as in `.env` |
+   | Secret | `WORKER_SECRET` | from a) |
+   | Secret | `GH_PAT` | from b) |
+
+6. Copy the worker's address (e.g. `https://posting-agent.<you>.workers.dev`) → **`WORKER_URL`**. Add it to `.env`.
+
+**d) Connect everything**
+1. GitHub secrets: add **`WORKER_URL`**, **`WORKER_SECRET`**, **`GH_PAT`**.
+2. Turn it on:
+   ```
+   python tools/telegram_webhook.py on <WORKER_URL>
+   ```
+3. `python main.py check` → *Instant mode: worker connected* ✅. Send `/help` to your bot — you'll see 👀 on your message right away and the answer about a minute later.
+
+To go back to hourly mode: `python tools/telegram_webhook.py off` and delete the `WORKER_URL` secret.
 
 ---
 
@@ -116,9 +185,11 @@ From now on it runs by itself: a draft every day at **08:00 Pakistan time**, pub
 
 | In Telegram | What happens |
 |---|---|
-| ✅ Approve & post | Publishes to LinkedIn, Facebook and Instagram |
+| ✅ Approve & post | Publishes to LinkedIn, Facebook, Instagram and Threads |
 | 🔁 Regenerate | Writes a different post (new topic) and sends it in a few minutes |
 | ❌ Skip | Nothing is posted today |
+| 📘 FB → فارسی / پښتو / English | Rewrites the Facebook post in that language (the others stay English) |
+| Any idea, e.g. `Freelancers should always sign contracts` | Writes a draft about your idea. Start with a pillar to set the theme: `Career freelancers should…` |
 | `/new` or `/new AI` | Creates an extra draft now (optionally on a pillar) |
 | `/status` | Lists recent drafts |
 
@@ -129,6 +200,8 @@ Drafts you don't answer expire after 2 days.
 - **Something failed?** The bot sends you the error. Full logs: GitHub → **Actions** → the failed run.
 - **One platform failed, others posted** → tap **🔁 Retry failed**; only the failed one is retried.
 - **LinkedIn 401** → token expired, redo step 5 and update the secrets.
+- **Threads errors** → check you accepted the tester invite (step 8.3); token expired → redo step 8.5.
+- **Taps not answered instantly** → `python tools/telegram_webhook.py info` shows the last error; `python main.py check` tests the worker.
 - **LinkedIn "version" error** → bump `api_versions.linkedin` in `config.yaml` to a recent month (format `YYYYMM`).
 - **Meta "permission" errors** → redo step 4.5–4.6 and make sure the Page **and** Instagram account were ticked in the popup.
 - **Turn a platform off** → set it to `false` under `platforms:` in `config.yaml`.

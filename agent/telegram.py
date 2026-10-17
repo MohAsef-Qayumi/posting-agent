@@ -65,5 +65,31 @@ def answer_callback(callback_id: str, text: str) -> None:
 
 
 def get_updates(offset: int) -> list[dict]:
-    return _call("getUpdates", offset=offset, timeout=0,
-                 allowed_updates=json.dumps(["message", "callback_query"]))
+    try:
+        return _call("getUpdates", offset=offset, timeout=0,
+                     allowed_updates=json.dumps(["message", "callback_query"]))
+    except RuntimeError as e:
+        if "webhook" in str(e).lower():
+            raise RuntimeError("Instant mode (webhook) is on, so taps are queued in the Cloudflare worker — "
+                               "set the WORKER_URL and WORKER_SECRET secrets.") from e
+        raise
+
+
+# ── instant mode: the Cloudflare worker receives taps instantly and queues them for us ──
+def queue_enabled() -> bool:
+    return bool(env("WORKER_URL", required=False))
+
+
+def _queue(method: str, path: str, **kwargs):
+    r = requests.request(method, env("WORKER_URL").rstrip("/") + path,
+                         headers={"Authorization": f"Bearer {env('WORKER_SECRET')}"}, timeout=30, **kwargs)
+    r.raise_for_status()
+    return r.json()
+
+
+def queued_updates() -> list[dict]:
+    return _queue("GET", "/queue")
+
+
+def ack(update_id: int) -> None:
+    _queue("POST", "/queue/ack", json={"ids": [update_id]})

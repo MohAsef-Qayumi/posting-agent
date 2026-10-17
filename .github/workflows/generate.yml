@@ -13,12 +13,16 @@ on:
         description: "Draft id to replace (used by the Regenerate button)"
         required: false
         default: ""
+      idea:
+        description: "Idea to write about (used when you message the bot)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
 
 concurrency:
-  group: posting-agent-state   # shared with process.yml so state commits never collide
+  group: posting-agent-generate   # one draft at a time; state files never overlap with process.yml
   cancel-in-progress: false
 
 jobs:
@@ -46,9 +50,13 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           LINKEDIN_TOKEN_EXPIRES: ${{ secrets.LINKEDIN_TOKEN_EXPIRES }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_TOKEN_EXPIRES: ${{ secrets.THREADS_TOKEN_EXPIRES }}
+          GH_PAT: ${{ secrets.GH_PAT }}   # optional: lets the agent renew the Threads token by itself
           PILLAR: ${{ inputs.pillar }}
           REPLACE: ${{ inputs.replace }}
-        run: python main.py generate --pillar "$PILLAR" --replace "$REPLACE"
+          IDEA: ${{ inputs.idea }}
+        run: python main.py generate --pillar "$PILLAR" --replace "$REPLACE" --idea "$IDEA"
 
       - name: Notify Telegram on failure
         if: failure()
@@ -66,5 +74,10 @@ jobs:
           git config user.name "posting-agent"
           git config user.email "posting-agent@users.noreply.github.com"
           git add state
-          git diff --cached --quiet || git commit -m "draft: $(date -u +%F)"
-          git pull --rebase --autostash && git push
+          git diff --cached --quiet && exit 0
+          git commit -m "draft: $(date -u +%F)"
+          for i in 1 2 3 4 5; do   # the other workflow may have pushed meanwhile
+            git pull --rebase && git push && exit 0
+            sleep $((i * 3))
+          done
+          exit 1

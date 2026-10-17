@@ -26,6 +26,13 @@ platforms:
   linkedin: true
   facebook: true
   instagram: true
+  threads: true   # set to true after SETUP.md step 8 (Threads secrets added)
+
+# Extra languages for the Facebook post — each becomes a "📘 FB → …" button under the Telegram draft.
+# label = button text, name = what the AI is told to write in.
+facebook_languages:
+  fa: { label: "فارسی", name: "Dari (Afghan Persian) — use Afghan vocabulary and spelling, not Iranian Farsi" }
+  ps: { label: "پښتو", name: "Pashto (Afghan Pashto)" }
 
 # Content pillar per weekday (Pakistan time).
 rotation:
@@ -64,6 +71,7 @@ slides:
 api_versions:
   meta_graph: "v26.0"
   linkedin: "202608"
+  threads: "v1.0"
 
 # How many days of history to send Claude so it avoids repeating topics.
 history_days: 45

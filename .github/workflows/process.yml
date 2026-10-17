@@ -1,16 +1,23 @@
 name: Process approvals
 
 on:
-  schedule:
-    - cron: "*/30 2-19 * * *"   # every 30 min, 07:00–00:30 Pakistan time
+  # Instant mode: the Cloudflare worker starts this run the moment you tap a button or message the bot.
   workflow_dispatch:
+    inputs:
+      update:
+        description: "Telegram update (filled in by the Cloudflare worker — leave empty)"
+        required: false
+        default: ""
+  # Fallback: catch anything missed, expire old drafts. Without the worker, taps wait for this run.
+  schedule:
+    - cron: "15 2-19 * * *"   # hourly, 07:15–00:15 Pakistan time
 
 permissions:
   contents: write
-  actions: write   # lets Regenerate / /new trigger the generate workflow
+  actions: write   # lets Regenerate / ideas / /new start the generate workflow
 
 concurrency:
-  group: posting-agent-state
+  group: posting-agent-process   # taps are queued, so a newer run safely replaces a waiting one
   cancel-in-progress: false
 
 jobs:
@@ -26,28 +33,27 @@ jobs:
           cache: pip
 
       - name: Install dependencies (lightweight — no browser needed here)
-        run: pip install requests PyYAML python-dotenv tzdata
+        run: pip install requests PyYAML python-dotenv tzdata feedparser anthropic
 
       - name: Handle Telegram taps and publish approved drafts
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          WORKER_SECRET: ${{ secrets.WORKER_SECRET }}
+          TELEGRAM_UPDATE: ${{ inputs.update }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
-        run: python main.py process --dispatch-file "$RUNNER_TEMP/dispatch.txt"
-
-      - name: Trigger requested drafts
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          f="$RUNNER_TEMP/dispatch.txt"
-          [ -f "$f" ] || exit 0
-          while IFS='|' read -r pillar replace; do
-            gh workflow run generate.yml --repo "${{ github.repository }}" -f pillar="$pillar" -f replace="$replace"
-          done < "$f"
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python main.py process
 
       - name: Save state
         if: always()
@@ -55,5 +61,10 @@ jobs:
           git config user.name "posting-agent"
           git config user.email "posting-agent@users.noreply.github.com"
           git add state
-          git diff --cached --quiet || git commit -m "process: $(date -u +%FT%H%MZ)"
-          git pull --rebase --autostash && git push
+          git diff --cached --quiet && exit 0
+          git commit -m "process: $(date -u +%FT%H%MZ)"
+          for i in 1 2 3 4 5; do   # the other workflow may have pushed meanwhile
+            git pull --rebase && git push && exit 0
+            sleep $((i * 3))
+          done
+          exit 1

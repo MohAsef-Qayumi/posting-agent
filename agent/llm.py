@@ -30,7 +30,8 @@ def pick_provider(cfg: dict) -> str:
     raise RuntimeError("No AI API key found. Set one of: " + ", ".join(KEYS.values()))
 
 
-def complete_json(cfg: dict, system: str, user: str, schema: dict) -> tuple[dict, str]:
+def complete_json(cfg: dict, system: str, user: str, schema: dict, check=None) -> tuple[dict, str]:
+    """`check(data)` may fix up the result or raise ValueError to trigger a retry (free providers only)."""
     provider = pick_provider(cfg)
     model = cfg["llm"]["models"][provider]
     if provider == "claude":
@@ -45,7 +46,8 @@ def complete_json(cfg: dict, system: str, user: str, schema: dict) -> tuple[dict
     for _ in range(2):
         try:
             raw = _gemini(model, system_json, user) if provider == "gemini" else _openai_compatible(provider, model, system_json, user)
-            return _validate(json.loads(_strip_fences(raw)), schema), f"{provider}/{model}"
+            data = _validate(json.loads(_strip_fences(raw)), schema)
+            return (check(data) if check else data), f"{provider}/{model}"
         except (json.JSONDecodeError, ValueError) as e:
             last_error = e
             time.sleep(3)
@@ -113,7 +115,7 @@ def _strip_fences(text: str) -> str:
 
 
 def _validate(data: dict, schema: dict) -> dict:
-    """Light validation for providers without guaranteed schemas: fill gaps, reject unusable output."""
+    """Light validation for providers without guaranteed schemas: fill missing strings, reject missing lists."""
     if not isinstance(data, dict):
         raise ValueError("not a JSON object")
     for key, spec in schema["properties"].items():
@@ -122,22 +124,4 @@ def _validate(data: dict, schema: dict) -> dict:
                 data[key] = ""
             else:
                 raise ValueError(f"missing '{key}'")
-    for field in ("topic", "linkedin_text", "facebook_text", "instagram_caption"):
-        if not str(data[field]).strip():
-            raise ValueError(f"empty '{field}'")
-    slide_keys = schema["properties"]["slides"]["items"]["properties"]
-    slides = []
-    for s in data["slides"]:
-        if not isinstance(s, dict):
-            continue
-        s = {k: str(s.get(k) or "") for k in slide_keys}
-        if s["kind"] not in ("cover", "point", "code"):
-            s["kind"] = "point"
-        slides.append(s)
-    if len(slides) < 2:
-        raise ValueError("too few slides")
-    if slides[0]["kind"] != "cover":
-        slides[0]["kind"] = "cover"
-    data["slides"] = slides
-    data["hashtags"] = [str(h) for h in data["hashtags"] if str(h).strip()]
     return data

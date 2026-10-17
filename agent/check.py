@@ -42,6 +42,17 @@ def check() -> bool:
             raise RuntimeError(r.get("description"))
         env("TELEGRAM_CHAT_ID")
         results.append(_line(True, "Telegram", f"bot @{r['result']['username']}"))
+        hook = requests.get(f"https://api.telegram.org/bot{env('TELEGRAM_BOT_TOKEN')}/getWebhookInfo", timeout=60).json()["result"]
+        if hook.get("url"):
+            from . import telegram
+
+            if not telegram.queue_enabled():
+                raise RuntimeError("instant mode is on but WORKER_URL / WORKER_SECRET are missing")
+            telegram.queued_updates()  # proves the worker URL and secret are right
+            note = f" (last error: {hook['last_error_message']})" if hook.get("last_error_message") else ""
+            results.append(_line(not note, "Instant mode", f"worker connected{note}"))
+        else:
+            print("ℹ️  Instant mode: off — taps are handled by the hourly run (see SETUP.md step 9)")
     except Exception as e:
         results.append(_line(False, "Telegram", str(e)[:200]))
 
@@ -77,6 +88,20 @@ def check() -> bool:
                 results.append(_line(True, "Instagram", f"@{u['username']}{note}"))
         except Exception as e:
             results.append(_line(False, "Facebook/Instagram", str(e)[:200]))
+
+    # Threads
+    if cfg["platforms"].get("threads"):
+        try:
+            r = requests.get(f"https://graph.threads.net/{cfg['api_versions'].get('threads', 'v1.0')}/me",
+                             params={"fields": "username", "access_token": env("THREADS_ACCESS_TOKEN")}, timeout=20).json()
+            if "error" in r:
+                raise RuntimeError(r["error"]["message"])
+            detail = f"@{r['username']}"
+            if exp := env("THREADS_TOKEN_EXPIRES", required=False):
+                detail += f", token expires in {(date.fromisoformat(exp) - now().date()).days} days"
+            results.append(_line(True, "Threads", detail))
+        except Exception as e:
+            results.append(_line(False, "Threads", str(e)[:200]))
 
     print("\nAll good! 🎉" if all(results) else "\nFix the ❌ items above (see SETUP.md).")
     return all(results)

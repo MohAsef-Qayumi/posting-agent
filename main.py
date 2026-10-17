@@ -1,7 +1,7 @@
 """Posting agent CLI.
 
-  python main.py generate [--pillar AI] [--replace DRAFT_ID]   create a draft and send it to Telegram
-  python main.py process  [--dispatch-file PATH]               handle Telegram taps, publish approved drafts
+  python main.py generate [--pillar AI] [--replace ID] [--idea TEXT]   create a draft and send it to Telegram
+  python main.py process                                               handle Telegram taps, publish approved drafts
   python main.py preview  [--pillar AI] [--sample]             generate + render locally only (no Telegram)
   python main.py check                                         verify every credential works
 """
@@ -17,8 +17,8 @@ def main() -> None:
     g = sub.add_parser("generate")
     g.add_argument("--pillar", default="")
     g.add_argument("--replace", default="")
-    p = sub.add_parser("process")
-    p.add_argument("--dispatch-file", default="")
+    g.add_argument("--idea", default="")
+    sub.add_parser("process")
     pv = sub.add_parser("preview")
     pv.add_argument("--pillar", default="")
     pv.add_argument("--sample", action="store_true", help="render built-in sample slides (no API key needed)")
@@ -28,13 +28,13 @@ def main() -> None:
     if args.command == "generate":
         from agent.pipeline import create_draft
 
-        draft = create_draft(pillar=args.pillar or None, replace=args.replace or None)
+        draft = create_draft(pillar=args.pillar or None, replace=args.replace or None, idea=args.idea or None)
         print(f"Draft {draft['id']} sent to Telegram: {draft['topic']}")
 
     elif args.command == "process":
         from agent.pipeline import process_updates, run_dispatch
 
-        run_dispatch(process_updates(), args.dispatch_file or None)
+        run_dispatch(process_updates())
 
     elif args.command == "preview":
         from agent.preview import preview

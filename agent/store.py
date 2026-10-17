@@ -61,14 +61,20 @@ def prune_drafts(keep_days: int = 7) -> None:
 
 
 # ── history ───────────────────────────────────────────────────
+# One file per draft (state/history/<draft_id>.json) so the generate and process
+# workflows can save state at the same time without git merge conflicts.
+HISTORY_DIR = STATE_DIR / "history"
+
+
 def history() -> list[dict]:
-    return _read(HISTORY_FILE, [])
+    items = _read(HISTORY_FILE, [])  # legacy single-file history
+    if HISTORY_DIR.exists():
+        items += [_read(p, None) for p in sorted(HISTORY_DIR.glob("*.json"))]
+    return sorted((h for h in items if h), key=lambda h: h["draft_id"])
 
 
 def add_history(entry: dict) -> None:
-    items = history()
-    items.append(entry)
-    _write(HISTORY_FILE, items[-500:])
+    _write(HISTORY_DIR / f"{entry['draft_id']}.json", entry)
 
 
 def recent_topics(days: int) -> list[str]:
@@ -76,10 +82,32 @@ def recent_topics(days: int) -> list[str]:
     return [f"[{h['pillar']}] {h['topic']}" for h in history() if h["date"] >= cutoff]
 
 
-# ── telegram offset ───────────────────────────────────────────
+# ── telegram ──────────────────────────────────────────────────
 def telegram_offset() -> int:
     return _read(TELEGRAM_FILE, {}).get("offset", 0)
 
 
 def set_telegram_offset(offset: int) -> None:
-    _write(TELEGRAM_FILE, {"offset": offset})
+    data = _read(TELEGRAM_FILE, {})
+    data["offset"] = max(offset, data.get("offset", 0))
+    _write(TELEGRAM_FILE, data)
+
+
+def seen_updates() -> set[int]:
+    """Update ids already handled in instant mode (the worker's queue may briefly return them again)."""
+    return set(_read(TELEGRAM_FILE, {}).get("seen", []))
+
+
+def mark_seen(update_id: int) -> None:
+    data = _read(TELEGRAM_FILE, {})
+    data["seen"] = (data.get("seen", []) + [update_id])[-300:]
+    _write(TELEGRAM_FILE, data)
+
+
+# ── misc small state (e.g. Threads token renewal) ─────────────
+def get_state(name: str, default):
+    return _read(STATE_DIR / f"{name}.json", default)
+
+
+def set_state(name: str, data) -> None:
+    _write(STATE_DIR / f"{name}.json", data)

@@ -9,6 +9,7 @@ SAMPLE = {
     "topic": "Python one-liners that replace whole loops",
     "linkedin_text": "(sample LinkedIn text)",
     "facebook_text": "(sample Facebook text)",
+    "threads_text": "(sample Threads text)",
     "instagram_caption": "(sample Instagram caption)",
     "hashtags": ["python", "coding"],
     "cta": "Follow for daily dev tips",
@@ -35,5 +36,6 @@ def preview(pillar: str | None, sample: bool = False) -> None:
     print(f"\n=== {post['pillar']}: {post['topic']} ===\n")
     print("--- LinkedIn ---\n" + post["linkedin_text"] + "\n")
     print("--- Facebook ---\n" + post["facebook_text"] + "\n")
+    print("--- Threads ---\n" + post.get("threads_text", "") + "\n")
     print("--- Instagram ---\n" + post["instagram_caption"] + "\n" + " ".join("#" + t for t in post["hashtags"]))
     print(f"\nSlides ({len(names)}) saved in: {out}")
