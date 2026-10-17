@@ -318,7 +318,17 @@ def _handle_button(cb: dict, dispatch: list[dict]) -> None:
         telegram.answer_callback(cb["id"], f"Facebook → {lang['label']}")
         texts = draft.setdefault("facebook_texts", {"en": draft["post"]["facebook_text"]})
         if arg not in texts:
-            texts[arg], _ = translate(texts["en"], lang["name"])
+            try:
+                texts[arg], _ = translate(texts["en"], lang["name"])
+            except Exception as e:
+                traceback.print_exc()
+                current = _languages()[draft.get("facebook_lang", "en")]["label"]
+                telegram.send(
+                    f"⚠️ Couldn't write the {lang['label']} version right now — the AI writers are busy.\n"
+                    f"The Facebook post is still in {current}. Tap the button again in a minute, "
+                    f"or approve to post it as it is.\n\n({str(e)[:200]})"
+                )
+                return
         draft["facebook_lang"] = arg
         store.save_draft(draft)
         telegram.send(f"📘 FACEBOOK ({lang['label']})\n\n{texts[arg]}")

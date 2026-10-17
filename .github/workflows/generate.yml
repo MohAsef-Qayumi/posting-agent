@@ -31,6 +31,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Latest state, not the commit from when this run was queued — otherwise a run queued
+          # behind another one would miss its saved state (e.g. publish a draft a second time).
+          ref: ${{ github.ref_name }}
 
       - uses: actions/setup-python@v5
         with:
