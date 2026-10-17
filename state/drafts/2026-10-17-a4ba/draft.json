@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-17-a4ba",
+  "created": "2026-10-17T16:18:43+05:00",
+  "status": "pending",
+  "pillar": "Engagement",
+  "topic": "Microservices vs Modular Monolith for New Projects",
+  "post": {
+    "topic": "Microservices vs Modular Monolith for New Projects",
+    "linkedin_text": "Most new projects do not need microservices.\n\nYet teams still split their fresh architecture into six repositories on day one.\n\nHere is what usually happens instead:\n\n→ Network latency creeps into every simple read operation.\n→ Distributed tracing becomes a full-time debugging chore.\n→ Deployments turn into coordinated multi-repo nightmares.\n→ Business logic fragments across half-finished API contracts.\n\nA clean modular monolith gives you fast iteration, single-transaction guarantees, and painless local setups.\n\nYou can always extract independent services later when data boundaries actually demand it.\n\nWhere do you stand when kicking off a new system: start monolithic or go straight to distributed services?\n\n#webdevelopment #softwareengineering #fullstack #systemdesign #coding",
+    "facebook_text": "Honest developer question: Why do so many new projects jump straight to microservices on day one? 😅\n\nIn my experience, starting with a clean modular monolith saves weeks of DevOps overhead and lets you ship features way faster.\n\nWhat is your default choice when starting a fresh backend project? Monolith or microservices?\n\n#softwareengineer #webdev #programming",
+    "instagram_caption": "Are we over-engineering day-one architectures?\n\nHere is why the modular monolith usually wins early on:\n\n⚡ Zero network latency between core domain modules\n🛠 Simple local setup with zero Docker orchestration headaches\n🔒 Instant database transactions across domain boundaries\n📦 Unified deployment pipeline in a single repository\n\nYou can always split into independent services once real traffic demands it.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "softwaredevelopment",
+      "systemdesign",
+      "webdevelopment",
+      "fullstackdeveloper",
+      "backenddev",
+      "softwareengineering",
+      "codinglife",
+      "programmerlife",
+      "microservices",
+      "cleanarchitecture",
+      "devcommunity",
+      "learntocode",
+      "techdebate",
+      "javascriptdev"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Stop Building *Microservices* on Day One",
+        "body": "Why modular monoliths win for early-stage development speed.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Debugging Is Dead Simple",
+        "body": "Trace bugs with standard stack traces in one repo instead of chasing distributed logs across multiple independent containers.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "ACID Transactions by Default",
+        "body": "Keep database consistency simple. You do not need two-phase commits or complex Saga patterns just to save linked records.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Frictionless Refactoring",
+        "body": "When your domain model changes, refactoring function calls takes minutes. Changing network contracts across remote services breaks everything.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Extract When Needed",
+        "body": "Build strict module boundaries inside your monolith today. If one module ever needs dedicated scaling, spin it out cleanly.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Share your thoughts in the comments",
+    "alt_text": "Carousel discussing why developers should choose a modular monolith over microservices for new projects.",
+    "written_by": "gemini/gemini-flash-latest",
+    "pillar": "Engagement"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg",
+    "slide_06.jpg"
+  ],
+  "results": {},
+  "control_message_id": 13
+}
