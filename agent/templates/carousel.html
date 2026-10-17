@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=block" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<style>
+  :root {
+    --bg: #070b12;
+    --panel: #0f1622;
+    --line: rgba(120, 160, 220, 0.08);
+    --text: #e6edf7;
+    --muted: #8b98ad;
+    --cyan: #22d3ee;
+    --violet: #a78bfa;
+    --green: #34d399;
+    --grad: linear-gradient(100deg, var(--cyan), var(--violet));
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; }
+  .slide {
+    width: 1080px; height: 1350px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(900px 600px at -10% -5%, rgba(34, 211, 238, 0.16), transparent 60%),
+      radial-gradient(800px 700px at 110% 105%, rgba(167, 139, 250, 0.18), transparent 60%),
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 54px 54px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 54px 54px,
+      var(--bg);
+    color: var(--text); font-family: Inter, sans-serif;
+    padding: 80px 84px; display: flex; flex-direction: column;
+  }
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .who { display: flex; align-items: center; gap: 20px; }
+  .avatar {
+    width: 72px; height: 72px; border-radius: 50%; background: var(--grad);
+    display: grid; place-items: center; font: 700 28px "Space Grotesk"; color: #06121a;
+  }
+  .name { font: 600 28px Inter; }
+  .handle { font: 400 22px "JetBrains Mono"; color: var(--muted); margin-top: 2px; }
+  .tag {
+    font: 600 22px "JetBrains Mono"; color: var(--cyan); padding: 10px 22px;
+    border: 2px solid rgba(34, 211, 238, 0.35); border-radius: 999px; background: rgba(34, 211, 238, 0.06);
+  }
+  .main { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+  .fit { overflow: hidden; }
+  .hl { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* cover */
+  .cover .prompt { font: 400 30px "JetBrains Mono"; color: var(--green); margin-bottom: 36px; }
+  .cover .prompt::after { content: "▍"; color: var(--cyan); margin-left: 6px; }
+  .cover h1 { font: 700 96px/1.05 "Space Grotesk"; letter-spacing: -2px; max-height: 720px; }
+  .cover .sub { font: 400 38px/1.4 Inter; color: var(--muted); margin-top: 44px; max-height: 220px; }
+
+  /* point */
+  .num { font: 700 150px/1 "Space Grotesk"; color: transparent; -webkit-text-stroke: 2px rgba(167, 139, 250, 0.55); margin-bottom: 30px; }
+  .point h2 { font: 700 68px/1.1 "Space Grotesk"; letter-spacing: -1px; max-height: 320px; }
+  .bar { width: 120px; height: 8px; border-radius: 4px; background: var(--grad); margin: 44px 0; }
+  .point p { font: 400 42px/1.5 Inter; color: #c5d0e0; max-height: 480px; }
+
+  /* code */
+  .code h2 { font: 700 60px/1.1 "Space Grotesk"; margin-bottom: 40px; max-height: 200px; }
+  .window { background: var(--panel); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
+  .window .bar3 { display: flex; gap: 12px; padding: 22px 26px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+  .window .bar3 i { width: 18px; height: 18px; border-radius: 50%; display: block; }
+  .window pre { margin: 0; padding: 30px 34px; max-height: 640px; }
+  .window code { font: 400 30px/1.55 "JetBrains Mono"; background: transparent !important; padding: 0 !important; white-space: pre; }
+  .code p { font: 400 34px/1.45 Inter; color: #c5d0e0; margin-top: 36px; max-height: 160px; }
+
+  /* cta */
+  .main.cta { align-items: center; text-align: center; }
+  .cta .avatar.big { width: 200px; height: 200px; font-size: 76px; margin: 0 auto 44px; box-shadow: 0 0 0 10px rgba(34, 211, 238, 0.12), 0 0 80px rgba(167, 139, 250, 0.4); }
+  .cta h2 { font: 700 74px/1.1 "Space Grotesk"; max-width: 860px; }
+  .cta .handle-big { font: 600 36px "JetBrains Mono"; color: var(--cyan); margin-top: 30px; }
+  .actions { display: flex; gap: 28px; justify-content: center; margin-top: 70px; }
+  .actions div { width: 230px; padding: 30px 0; border-radius: 24px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); font: 500 28px Inter; color: var(--muted); }
+  .actions b { display: block; font-size: 54px; margin-bottom: 12px; }
+
+  .bottom { display: flex; align-items: center; justify-content: space-between; font: 400 24px "JetBrains Mono"; color: var(--muted); }
+  .progress { flex: 1; height: 4px; background: rgba(255, 255, 255, 0.08); border-radius: 2px; margin: 0 30px; overflow: hidden; }
+  .progress span { display: block; height: 100%; background: var(--grad); }
+  .swipe { color: var(--text); }
+</style>
+</head>
+<body>
+{% set total = slides|length %}
+{% for s in slides %}
+<section class="slide {{ s.kind }}" id="s{{ loop.index }}">
+  <div class="top">
+    <div class="who">
+      <div class="avatar">{{ initials }}</div>
+      <div><div class="name">{{ name }}</div><div class="handle">{{ handle }}</div></div>
+    </div>
+    <div class="tag">#{{ pillar }}</div>
+  </div>
+
+  <div class="main {{ s.kind }}">
+  {% if s.kind == "cover" %}
+    <div class="prompt">$ {{ pillar|lower }} --daily</div>
+    <h1 class="fit">{{ s.title_html }}</h1>
+    {% if s.body %}<div class="sub fit">{{ s.body }}</div>{% endif %}
+  {% elif s.kind == "point" %}
+    <div class="num">{{ "%02d"|format(s.n) }}</div>
+    <h2 class="fit">{{ s.title }}</h2>
+    <div class="bar"></div>
+    <p class="fit">{{ s.body }}</p>
+  {% elif s.kind == "code" %}
+    <h2 class="fit">{{ s.title }}</h2>
+    <div class="window">
+      <div class="bar3"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+      <pre class="fit"><code class="language-{{ s.language or 'plaintext' }}">{{ s.code }}</code></pre>
+    </div>
+    {% if s.body %}<p class="fit">{{ s.body }}</p>{% endif %}
+  {% elif s.kind == "cta" %}
+    <div class="avatar big">{{ initials }}</div>
+    <h2>{{ s.title }}</h2>
+    <div class="handle-big">{{ handle }}</div>
+    <div class="actions">
+      <div><b>💾</b>Save</div><div><b>🔁</b>Share</div><div><b>💬</b>Comment</div>
+    </div>
+  {% endif %}
+  </div>
+
+  <div class="bottom">
+    <span>{{ "%02d"|format(loop.index) }} / {{ "%02d"|format(total) }}</span>
+    <div class="progress"><span style="width: {{ (loop.index / total * 100)|round(1) }}%"></span></div>
+    <span class="swipe">{% if not loop.last %}swipe →{% else %}follow ✦{% endif %}</span>
+  </div>
+</section>
+{% endfor %}
+<script>
+  // Shrink any text block that overflows its box so long text never gets cut off.
+  window.fitText = async () => {
+    try { if (window.hljs) hljs.highlightAll(); } catch (e) {}
+    await document.fonts.ready;
+    for (const el of document.querySelectorAll(".fit")) {
+      const isCode = el.tagName === "PRE";
+      const target = isCode ? el.querySelector("code") : el;
+      let size = parseFloat(getComputedStyle(target).fontSize);
+      const maxH = parseFloat(getComputedStyle(el).maxHeight) || Infinity;
+      const overflows = () => el.scrollHeight > maxH || (isCode && el.scrollWidth > el.clientWidth + 2);
+      while (overflows() && size > 16) {
+        size -= 2;
+        target.style.fontSize = size + "px";
+      }
+    }
+  };
+</script>
+</body>
+</html>
