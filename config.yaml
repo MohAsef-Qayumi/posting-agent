@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────────────────────
+#  Posting Agent configuration — edit freely, no code changes needed
+# ─────────────────────────────────────────────────────────────
+
+author:
+  name: "Mohammad Asef Qayumi"
+  headline: "Full-stack developer | MERN · Flutter · Python · Java"
+  location: "Herat, Afghanistan"
+  instagram_handle: "@mohammadasefqayumi"
+  initials: "AQ"   # shown in the slide avatar
+  # How you sound. Claude uses this to write in your voice.
+  voice: >
+    Friendly, practical and confident. Speaks from real hands-on experience as a
+    full-stack developer and freelancer. Short sentences, no corporate jargon,
+    no fake hype. Gives concrete, actionable value in every post.
+
+startup:
+  # Fill these in when ready — Thursday posts will use them.
+  name: ""
+  one_liner: "A startup that finds generic, reusable solutions for existing everyday problems."
+  details: ""
+  website: ""
+
+# Which platforms to publish to. Set false to disable one.
+platforms:
+  linkedin: true
+  facebook: true
+  instagram: true
+
+# Content pillar per weekday (Herat local time).
+rotation:
+  monday:    { pillar: "AI",           brief: "Practical AI news, tools or techniques developers and professionals can use today." }
+  tuesday:   { pillar: "Career",       brief: "Career tips for developers: freelancing, interviews, portfolios, remote work, growth." }
+  wednesday: { pillar: "Tech",         brief: "Software development insights: MERN, Flutter, Python, Java, best practices, tools." }
+  thursday:  { pillar: "Startup",      brief: "The author's startup journey: problem-solving mindset, building in public, lessons learned." }
+  friday:    { pillar: "Code",         brief: "A useful code snippet, pattern or mini-tutorial with a clear before/after." }
+  saturday:  { pillar: "Engagement",   brief: "A thought-provoking question or poll-style post that invites comments from the tech community." }
+  sunday:    { pillar: "Mindset",      brief: "Motivation and lessons from the developer/freelancer journey — honest, not cheesy." }
+
+# Pillars that pull fresh headlines from the RSS feeds below for inspiration.
+news_pillars: ["AI", "Tech"]
+feeds:
+  - https://hnrss.org/frontpage?points=150
+  - https://techcrunch.com/category/artificial-intelligence/feed/
+  - https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+  - https://dev.to/feed/top/week
+
+claude:
+  model: "claude-opus-5-5"
+  effort: "medium"
+
+# Instagram carousel slide count (cover + content + CTA). Instagram allows up to 20.
+slides:
+  content_min: 3
+  content_max: 6
+
+# API versions — bump if the platforms deprecate them.
+api_versions:
+  meta_graph: "v23.0"
+  linkedin: "202608"
+
+# How many days of history to send Claude so it avoids repeating topics.
+history_days: 45

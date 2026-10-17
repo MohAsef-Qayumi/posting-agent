@@ -1,0 +1,59 @@
+name: Process approvals
+
+on:
+  schedule:
+    - cron: "*/30 2-19 * * *"   # every 30 min, 06:30–00:00 Herat time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write   # lets Regenerate / /new trigger the generate workflow
+
+concurrency:
+  group: posting-agent-state
+  cancel-in-progress: false
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies (lightweight — no browser needed here)
+        run: pip install requests PyYAML python-dotenv tzdata
+
+      - name: Handle Telegram taps and publish approved drafts
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python main.py process --dispatch-file "$RUNNER_TEMP/dispatch.txt"
+
+      - name: Trigger requested drafts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f="$RUNNER_TEMP/dispatch.txt"
+          [ -f "$f" ] || exit 0
+          while IFS='|' read -r pillar replace; do
+            gh workflow run generate.yml --repo "${{ github.repository }}" -f pillar="$pillar" -f replace="$replace"
+          done < "$f"
+
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "posting-agent"
+          git config user.email "posting-agent@users.noreply.github.com"
+          git add state
+          git diff --cached --quiet || git commit -m "process: $(date -u +%FT%H%MZ)"
+          git pull --rebase --autostash && git push

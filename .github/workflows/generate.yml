@@ -1,0 +1,68 @@
+name: Generate daily draft
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # 08:00 Herat time (UTC+4:30)
+  workflow_dispatch:
+    inputs:
+      pillar:
+        description: "Pillar (AI, Career, Tech, Startup, Code, Engagement, Mindset) — blank = today's"
+        required: false
+        default: ""
+      replace:
+        description: "Draft id to replace (used by the Regenerate button)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: posting-agent-state   # shared with process.yml so state commits never collide
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Generate draft and send to Telegram
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LINKEDIN_TOKEN_EXPIRES: ${{ secrets.LINKEDIN_TOKEN_EXPIRES }}
+          PILLAR: ${{ inputs.pillar }}
+          REPLACE: ${{ inputs.replace }}
+        run: python main.py generate --pillar "$PILLAR" --replace "$REPLACE"
+
+      - name: Notify Telegram on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="💥 Draft generation failed. Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > /dev/null
+
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "posting-agent"
+          git config user.email "posting-agent@users.noreply.github.com"
+          git add state
+          git diff --cached --quiet || git commit -m "draft: $(date -u +%F)"
+          git pull --rebase --autostash && git push
