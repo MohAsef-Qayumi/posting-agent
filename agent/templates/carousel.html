@@ -7,54 +7,113 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <style>
+  /* Default (Tech) theme; each pillar overrides these below. */
   :root {
     --bg: #070b12;
     --panel: #0f1622;
     --line: rgba(120, 160, 220, 0.08);
     --text: #e6edf7;
     --muted: #8b98ad;
-    --cyan: #22d3ee;
-    --violet: #a78bfa;
-    --green: #34d399;
-    --grad: linear-gradient(100deg, var(--cyan), var(--violet));
+    --a1: #22d3ee;          /* main accent */
+    --a2: #a78bfa;          /* second accent */
+    --a3: #34d399;          /* terminal prompt */
+    --pattern:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 54px 54px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 54px 54px;
+    --mark: "{ }";
+  }
+  /* AI: neural magenta/violet, dot grid */
+  .theme-ai {
+    --bg: #0b0716; --panel: #150f24; --line: rgba(216, 160, 255, 0.16);
+    --a1: #f472b6; --a2: #8b5cf6; --a3: #e879f9;
+    --pattern: radial-gradient(circle, var(--line) 2px, transparent 2.6px) 0 0 / 40px 40px;
+    --mark: "AI";
+  }
+  /* Career: gold/orange, rising diagonals */
+  .theme-career {
+    --bg: #0c0a06; --panel: #1a150c; --line: rgba(251, 191, 36, 0.07);
+    --a1: #fbbf24; --a2: #f97316; --a3: #fcd34d;
+    --pattern: repeating-linear-gradient(135deg, var(--line) 0 2px, transparent 2px 42px);
+    --mark: "$";
+  }
+  /* Startup: coral/orange, launch rings */
+  .theme-startup {
+    --bg: #110709; --panel: #1f0f12; --line: rgba(251, 113, 133, 0.10);
+    --a1: #fb7185; --a2: #fb923c; --a3: #fda4af;
+    --pattern: repeating-radial-gradient(circle at 88% 92%, var(--line) 0 2px, transparent 2px 72px);
+    --mark: "▲";
+  }
+  /* Code: terminal green/teal, CRT scanlines */
+  .theme-code {
+    --bg: #04100a; --panel: #0a1a12; --line: rgba(74, 222, 128, 0.06);
+    --a1: #4ade80; --a2: #2dd4bf; --a3: #4ade80;
+    --pattern:
+      repeating-linear-gradient(0deg, var(--line) 0 2px, transparent 2px 7px),
+      linear-gradient(90deg, rgba(74, 222, 128, 0.05) 1px, transparent 1px) 0 0 / 108px 108px;
+    --mark: "</>";
+  }
+  /* Engagement: electric blue/pink, chat dots */
+  .theme-engagement {
+    --bg: #070a17; --panel: #10142a; --line: rgba(96, 165, 250, 0.16);
+    --a1: #60a5fa; --a2: #f472b6; --a3: #93c5fd;
+    --pattern: radial-gradient(circle, var(--line) 3px, transparent 3.6px) 0 0 / 64px 64px;
+    --mark: "?";
+  }
+  /* Mindset: mint/lilac, calm waves */
+  .theme-mindset {
+    --bg: #060f10; --panel: #0d1b1d; --line: rgba(94, 234, 212, 0.08);
+    --a1: #5eead4; --a2: #c4b5fd; --a3: #99f6e4;
+    --pattern: repeating-radial-gradient(ellipse at 50% 135%, var(--line) 0 2px, transparent 2px 64px);
+    --mark: "∞";
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #000; }
   .slide {
     width: 1080px; height: 1350px; position: relative; overflow: hidden;
     background:
-      radial-gradient(900px 600px at -10% -5%, rgba(34, 211, 238, 0.16), transparent 60%),
-      radial-gradient(800px 700px at 110% 105%, rgba(167, 139, 250, 0.18), transparent 60%),
-      linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 54px 54px,
-      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 54px 54px,
+      radial-gradient(900px 600px at -10% -5%, color-mix(in srgb, var(--a1) 17%, transparent), transparent 60%),
+      radial-gradient(800px 700px at 110% 105%, color-mix(in srgb, var(--a2) 19%, transparent), transparent 60%),
+      var(--pattern),
       var(--bg);
     color: var(--text); font-family: Inter, sans-serif;
     padding: 80px 84px; display: flex; flex-direction: column;
+    --grad: linear-gradient(100deg, var(--a1), var(--a2));   /* set here so each theme's colors apply */
   }
+  .slide > * { position: relative; z-index: 1; }
+  .slide::before {   /* big faint pillar symbol */
+    content: var(--mark); position: absolute; z-index: 0; right: -30px; top: 170px;
+    font: 700 420px/1 "Space Grotesk"; letter-spacing: -20px; color: transparent;
+    -webkit-text-stroke: 3px color-mix(in srgb, var(--a1) 13%, transparent);
+  }
+  .slide.cta::before { display: none; }
   .top { display: flex; align-items: center; justify-content: space-between; }
   .who { display: flex; align-items: center; gap: 20px; }
   .avatar {
     width: 72px; height: 72px; border-radius: 50%; background: var(--grad);
-    display: grid; place-items: center; font: 700 28px "Space Grotesk"; color: #06121a;
+    display: grid; place-items: center; font: 700 24px "Space Grotesk"; letter-spacing: -0.5px; color: #06121a;
   }
+  .avatar.photo { padding: 4px; }   /* ring in the pillar's colors around the photo */
+  .avatar.photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; border: 3px solid var(--bg); }
+  .cta .avatar.big.photo { padding: 7px; }
   .name { font: 600 28px Inter; }
   .handle { font: 400 22px "JetBrains Mono"; color: var(--muted); margin-top: 2px; }
   .tag {
-    font: 600 22px "JetBrains Mono"; color: var(--cyan); padding: 10px 22px;
-    border: 2px solid rgba(34, 211, 238, 0.35); border-radius: 999px; background: rgba(34, 211, 238, 0.06);
+    font: 600 22px "JetBrains Mono"; color: var(--a1); padding: 10px 22px;
+    border: 2px solid color-mix(in srgb, var(--a1) 35%, transparent); border-radius: 999px;
+    background: color-mix(in srgb, var(--a1) 7%, transparent);
   }
   .main { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
   .fit { overflow: hidden; }
   .hl { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
   /* cover */
-  .cover .prompt { font: 400 30px "JetBrains Mono"; color: var(--green); margin-bottom: 36px; }
-  .cover .prompt::after { content: "▍"; color: var(--cyan); margin-left: 6px; }
+  .cover .prompt { font: 400 30px "JetBrains Mono"; color: var(--a3); margin-bottom: 36px; }
+  .cover .prompt::after { content: "▍"; color: var(--a1); margin-left: 6px; }
   .cover h1 { font: 700 96px/1.05 "Space Grotesk"; letter-spacing: -2px; max-height: 720px; }
   .cover .sub { font: 400 38px/1.4 Inter; color: var(--muted); margin-top: 44px; max-height: 220px; }
 
   /* point */
-  .num { font: 700 150px/1 "Space Grotesk"; color: transparent; -webkit-text-stroke: 2px rgba(167, 139, 250, 0.55); margin-bottom: 30px; }
+  .num { font: 700 150px/1 "Space Grotesk"; color: transparent; -webkit-text-stroke: 2px color-mix(in srgb, var(--a2) 60%, transparent); margin-bottom: 30px; }
   .point h2 { font: 700 68px/1.1 "Space Grotesk"; letter-spacing: -1px; max-height: 320px; }
   .bar { width: 120px; height: 8px; border-radius: 4px; background: var(--grad); margin: 44px 0; }
   .point p { font: 400 42px/1.5 Inter; color: #c5d0e0; max-height: 480px; }
@@ -70,9 +129,9 @@
 
   /* cta */
   .main.cta { align-items: center; text-align: center; }
-  .cta .avatar.big { width: 200px; height: 200px; font-size: 76px; margin: 0 auto 44px; box-shadow: 0 0 0 10px rgba(34, 211, 238, 0.12), 0 0 80px rgba(167, 139, 250, 0.4); }
+  .cta .avatar.big { width: 200px; height: 200px; font-size: 76px; margin: 0 auto 44px; box-shadow: 0 0 0 10px color-mix(in srgb, var(--a1) 13%, transparent), 0 0 80px color-mix(in srgb, var(--a2) 42%, transparent); }
   .cta h2 { font: 700 74px/1.1 "Space Grotesk"; max-width: 860px; }
-  .cta .handle-big { font: 600 36px "JetBrains Mono"; color: var(--cyan); margin-top: 30px; }
+  .cta .handle-big { font: 600 36px "JetBrains Mono"; color: var(--a1); margin-top: 30px; }
   .actions { display: flex; gap: 28px; justify-content: center; margin-top: 70px; }
   .actions div { width: 230px; padding: 30px 0; border-radius: 24px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); font: 500 28px Inter; color: var(--muted); }
   .actions b { display: block; font-size: 54px; margin-bottom: 12px; }
@@ -83,13 +142,13 @@
   .swipe { color: var(--text); }
 </style>
 </head>
-<body>
+<body class="theme-{{ theme }}">
 {% set total = slides|length %}
 {% for s in slides %}
 <section class="slide {{ s.kind }}" id="s{{ loop.index }}">
   <div class="top">
     <div class="who">
-      <div class="avatar">{{ initials }}</div>
+      {{ avatar_html }}
       <div><div class="name">{{ name }}</div><div class="handle">{{ handle }}</div></div>
     </div>
     <div class="tag">#{{ pillar }}</div>
@@ -113,7 +172,7 @@
     </div>
     {% if s.body %}<p class="fit">{{ s.body }}</p>{% endif %}
   {% elif s.kind == "cta" %}
-    <div class="avatar big">{{ initials }}</div>
+    {{ avatar_big_html }}
     <h2>{{ s.title }}</h2>
     <div class="handle-big">{{ handle }}</div>
     <div class="actions">

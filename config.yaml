@@ -7,7 +7,8 @@ author:
   headline: "Full-stack developer | MERN · Flutter · Python · Java"
   location: ""
   instagram_handle: "@mohammadasefqayumi"
-  initials: "MAQ"   # shown in the slide avatar
+  avatar: "public/avatar.jpg"   # your photo on the slides (square works best); remove to show initials
+  initials: "MAQ"                # shown instead when there's no avatar photo
   # How you sound. Claude uses this to write in your voice.
   voice: >
     Friendly, practical and confident. Speaks from real hands-on experience as a
