@@ -27,7 +27,9 @@ def check() -> bool:
         else:
             from . import llm
 
-            model = cfg["llm"]["models"][provider]
+            from .llm import candidates
+
+            model = candidates(cfg)[0][1]
             sys_prompt = 'Respond with only the JSON object {"ok": "yes"}.'
             raw = llm._gemini(model, sys_prompt, "ping") if provider == "gemini" else llm._openai_compatible(provider, model, sys_prompt, "ping")
             used = f"{provider}/{model}" if raw.strip() else ""

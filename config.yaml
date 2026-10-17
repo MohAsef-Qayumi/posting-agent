@@ -54,13 +54,17 @@ feeds:
   - https://dev.to/feed/top/week
 
 llm:
-  # "auto" = first provider whose API key is set: claude → gemini → openrouter.
-  # Start free with Gemini/OpenRouter; add ANTHROPIC_API_KEY later and Claude takes over.
+  # "auto" = try every provider whose API key is set: claude → gemini → openrouter.
+  # Each provider tries its models in order; busy/failed ones hand over to the next.
   provider: "auto"
   models:
     claude: "claude-opus-5-5"
-    gemini: "gemini-flash-latest"          # free tier; always points at the current Flash model
-    openrouter: "openai/gpt-oss-120b:free" # any model ending in ":free" from openrouter.ai/models
+    gemini:                                # free tier
+      - "gemini-flash-latest"
+      - "gemini-flash-lite-latest"         # separate capacity, used when Flash is overloaded
+    openrouter:                            # free models change often — pick any ending in ":free" at openrouter.ai/models
+      - "nvidia/nemotron-3-super-120b-a12b:free"
+      - "google/gemma-4-31b-it:free"
   claude_effort: "medium"
 
 # Instagram carousel slide count (cover + content + CTA). Instagram allows up to 20.

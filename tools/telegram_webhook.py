@@ -13,6 +13,8 @@ from pathlib import Path
 
 import requests
 
+sys.stdout.reconfigure(encoding="utf-8")
+
 try:
     from dotenv import load_dotenv
 
