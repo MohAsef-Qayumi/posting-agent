@@ -8,6 +8,7 @@
 import os
 import secrets
 import sys
+import time
 from pathlib import Path
 
 import requests
@@ -22,7 +23,14 @@ except ImportError:
 
 def call(method: str, **params) -> dict:
     token = os.environ.get("TELEGRAM_BOT_TOKEN") or sys.exit("TELEGRAM_BOT_TOKEN is missing from .env")
-    data = requests.post(f"https://api.telegram.org/bot{token}/{method}", json=params, timeout=60).json()
+    for attempt in range(5):  # some networks drop connections to Telegram now and then
+        try:
+            data = requests.post(f"https://api.telegram.org/bot{token}/{method}", json=params, timeout=60).json()
+            break
+        except requests.ConnectionError:
+            if attempt == 4:
+                sys.exit("Couldn't reach Telegram after 5 tries — check your connection (or a VPN) and run this again.")
+            time.sleep(3)
     if not data.get("ok"):
         sys.exit(f"Telegram {method} failed: {data.get('description')}")
     return data["result"]
