@@ -22,13 +22,18 @@ def _languages() -> dict:
 
 
 def _controls(draft: dict) -> list[list[tuple[str, str]]]:
+    """Approve buttons — one per ready Facebook language, so approving also picks the language."""
     did = draft["id"]
-    rows = [[("✅ Approve & post", f"a:{did}")], [("🔁 Regenerate", f"r:{did}"), ("❌ Skip", f"s:{did}")]]
-    if load_config()["platforms"].get("facebook"):
-        current = draft.get("facebook_lang", "en")
-        langs = [(f"📘 FB → {lang['label']}", f"l:{did}:{code}") for code, lang in _languages().items() if code != current]
-        if langs:
-            rows.append(langs)
+    if not load_config()["platforms"].get("facebook"):
+        rows = [[("✅ Approve & post", f"a:{did}")]]
+    else:
+        texts, langs = _facebook_texts(draft), _languages()
+        ready = [(f"✅ Post · FB {lang['label']}", f"a:{did}:{code}") for code, lang in langs.items() if code in texts]
+        rows = [ready[:1], ready[1:]] if len(ready) > 1 else [ready]
+        missing = [(f"🌐 Write FB in {lang['label']}", f"l:{did}:{code}") for code, lang in langs.items() if code not in texts]
+        if missing:
+            rows.append(missing)
+    rows.append([("🔁 Regenerate", f"r:{did}"), ("❌ Skip", f"s:{did}")])
     return rows
 
 
@@ -36,10 +41,32 @@ def _send_controls(draft: dict) -> None:
     """(Re)sends the button message at the bottom of the chat and disables the previous one."""
     if draft.get("control_message_id"):
         telegram.set_buttons(draft["control_message_id"], None)
-    lang = draft.get("facebook_lang", "en")
-    note = "" if lang == "en" else f" · Facebook in {_languages()[lang]['label']}"
-    draft["control_message_id"] = telegram.send(f"👆 Draft {draft['id']}{note} — what should I do?", _controls(draft))
+    question = ("pick the Facebook language to post with" if load_config()["platforms"].get("facebook")
+                else "what should I do?")
+    draft["control_message_id"] = telegram.send(f"👆 Draft {draft['id']} — {question}", _controls(draft))
     store.save_draft(draft)
+
+
+def _facebook_texts(draft: dict) -> dict:
+    return draft.get("facebook_texts") or {"en": draft["post"]["facebook_text"]}
+
+
+def _translate_facebook(post: dict) -> dict:
+    """Writes the Facebook post in every extra language up front, so the preview has them all."""
+    texts = {"en": post["facebook_text"]}
+    if not load_config()["platforms"].get("facebook"):
+        return texts
+    from .content import translate
+
+    for code, lang in _languages().items():
+        if code == "en":
+            continue
+        try:
+            texts[code], used = translate(post["facebook_text"], lang["name"])
+            print(f"[translate] Facebook {code} written by {used}")
+        except Exception as e:  # the preview offers a "Write FB in …" button instead
+            print(f"[translate] Facebook {code} failed: {e}")
+    return texts
 
 
 def _instagram_caption(post: dict) -> str:
@@ -48,7 +75,7 @@ def _instagram_caption(post: dict) -> str:
 
 
 def _facebook_text(draft: dict) -> str:
-    return draft.get("facebook_texts", {}).get(draft.get("facebook_lang", "en")) or draft["post"]["facebook_text"]
+    return _facebook_texts(draft).get(draft.get("facebook_lang", "en")) or draft["post"]["facebook_text"]
 
 
 # ── generate ──────────────────────────────────────────────────
@@ -73,6 +100,7 @@ def create_draft(pillar: str | None = None, replace: str | None = None, idea: st
         "post": post,
         "images": [],
         "results": {},
+        "facebook_texts": _translate_facebook(post),
     }
     draft["images"] = render_slides(post, store.draft_dir(draft["id"]))
     store.save_draft(draft)
@@ -92,7 +120,9 @@ def send_preview(draft: dict) -> None:
     if enabled.get("linkedin"):
         telegram.send(f"💼 LINKEDIN\n\n{post['linkedin_text']}")
     if enabled.get("facebook"):
-        telegram.send(f"📘 FACEBOOK\n\n{post['facebook_text']}")
+        langs = _languages()
+        for code, text in _facebook_texts(draft).items():
+            telegram.send(f"📘 FACEBOOK · {langs.get(code, {}).get('label', code)}\n\n{text}")
     if enabled.get("instagram"):
         telegram.send(f"📸 INSTAGRAM\n\n{_instagram_caption(post)}")
     if enabled.get("threads"):
@@ -227,7 +257,8 @@ HELP = (
     "/new AI | Career | Tech | Startup | Code | Engagement | Mindset — draft on a pillar\n"
     "/status — show recent drafts\n"
     "/help — this message\n\n"
-    "Under each draft: 📘 FB → فارسی / پښتو rewrites the Facebook post in that language."
+    "Each draft shows the Facebook post in English, فارسی and پښتو —\n"
+    "tap ✅ Post · FB <language> to publish everywhere with that Facebook version."
 )
 
 
@@ -294,11 +325,14 @@ def _handle_button(cb: dict, dispatch: list[dict]) -> None:
     if action == "a":
         telegram.answer_callback(cb["id"], "Publishing…")
         telegram.set_buttons(msg_id, None)
+        if arg in _facebook_texts(draft):  # "Retry failed" has no language and keeps the chosen one
+            draft["facebook_lang"] = arg
         draft["status"] = "approved"
         store.save_draft(draft)
         publish(draft)
+        lang = _languages().get(draft.get("facebook_lang", "en"), {}).get("label", "English")
         if draft["status"] == "published":
-            telegram.send(f"🚀 Published {draft['id']}\n\n{_report(draft)}")
+            telegram.send(f"🚀 Published {draft['id']} · Facebook in {lang}\n\n{_report(draft)}")
         else:
             telegram.send(f"⚠️ Partly published {draft['id']}\n\n{_report(draft)}", [[("🔁 Retry failed", f"a:{draft_id}")]])
     elif action == "r":
@@ -315,23 +349,21 @@ def _handle_button(cb: dict, dispatch: list[dict]) -> None:
         from .content import translate
 
         lang = _languages()[arg]
-        telegram.answer_callback(cb["id"], f"Facebook → {lang['label']}")
-        texts = draft.setdefault("facebook_texts", {"en": draft["post"]["facebook_text"]})
+        telegram.answer_callback(cb["id"], f"Writing Facebook in {lang['label']}…")
+        texts = draft.setdefault("facebook_texts", _facebook_texts(draft))
         if arg not in texts:
             try:
                 texts[arg], _ = translate(texts["en"], lang["name"])
             except Exception as e:
                 traceback.print_exc()
-                current = _languages()[draft.get("facebook_lang", "en")]["label"]
                 telegram.send(
                     f"⚠️ Couldn't write the {lang['label']} version right now — the AI writers are busy.\n"
-                    f"The Facebook post is still in {current}. Tap the button again in a minute, "
-                    f"or approve to post it as it is.\n\n({str(e)[:200]})"
+                    "Tap the button again in a minute, or post with one of the ready languages."
+                    f"\n\n({str(e)[:200]})"
                 )
                 return
-        draft["facebook_lang"] = arg
         store.save_draft(draft)
-        telegram.send(f"📘 FACEBOOK ({lang['label']})\n\n{texts[arg]}")
+        telegram.send(f"📘 FACEBOOK · {lang['label']}\n\n{texts[arg]}")
         _send_controls(draft)
 
 

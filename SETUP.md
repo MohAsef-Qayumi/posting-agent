@@ -185,10 +185,10 @@ To go back to hourly mode: `python tools/telegram_webhook.py off` and delete the
 
 | In Telegram | What happens |
 |---|---|
-| ✅ Approve & post | Publishes to LinkedIn, Facebook, Instagram and Threads |
+| ✅ Post · FB English / فارسی / پښتو | Publishes to LinkedIn, Facebook, Instagram and Threads — Facebook in the language you tapped (all three versions are in the preview; the other platforms stay English) |
 | 🔁 Regenerate | Writes a different post (new topic) and sends it in a few minutes |
 | ❌ Skip | Nothing is posted today |
-| 📘 FB → فارسی / پښتو / English | Rewrites the Facebook post in that language (the others stay English) |
+| 🌐 Write FB in … | Only appears if a translation failed — tries that language again |
 | Any idea, e.g. `Freelancers should always sign contracts` | Writes a draft about your idea. Start with a pillar to set the theme: `Career freelancers should…` |
 | `/new` or `/new AI` | Creates an extra draft now (optionally on a pillar) |
 | `/status` | Lists recent drafts |
