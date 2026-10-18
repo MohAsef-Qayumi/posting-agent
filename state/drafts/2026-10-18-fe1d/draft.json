@@ -1,7 +1,7 @@
 {
   "id": "2026-10-18-fe1d",
   "created": "2026-10-18T22:33:57+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Mindset",
   "topic": "Overcoming Developer Perfectionism and Actually Shipping Projects",
   "idea": "",
@@ -77,11 +77,37 @@
     "slide_05.jpg",
     "slide_06.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7517640292288655360/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122099587989516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/DepPV69EZtc/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/DepPZkVlWWW"
+    }
+  },
   "facebook_texts": {
     "en": "Early in my dev journey, I thought great developers wrote spotless code on the very first try. The truth? Perfectionism usually just hides the fear of putting your work out there.\n\nClients and users care about working solutions, not whether your utility files are organized flawlessly. Build the feature, test it thoroughly, ship it, and refactor later. 💡\n\nWhat is one project you need to stop tweaking and finally launch? 🚀\n\n#developerlife #freelancing #programming",
     "fa": "اوایل کارم در دنیای برنامه‌نویسی، فکر می‌کردم برنامه‌نویس‌های عالی همو بار اول کد کاملاً پاک و بی‌نقص می‌نویسند. اما حقیقت چیست؟ کمال‌گرایی اکثراً فقط ترس از نشان دادن کارت به دیگران را پنهان می‌کند.\n\nبرای کلایت‌ها و یوزرها یک راه‌حل کارآمد مهم است، نه اینکه فایل‌های utility تان صددرصد بی‌عیب چیده شده باشد یا نی. Feature را بسازید، درست test کنید، ship کنید و refactor را بمانید برای بعد. 💡\n\nکدام پروژه‌تان است که باید از دست‌کاری زیادش دست بکشید و بالاخره لانچش کنید؟ 🚀\n\n#developerlife #freelancing #programming",
     "ps": "د خپل dev journey په پیل کې، ما فکر کاوه چې تکړه developers له همغه لومړي ځله بې‌عیبه code لیکي. خو حقیقت؟ Perfectionism ډېری وخت یوازې د خپل کار د ښکاره کولو وېره پټوي.\n\nد clients او users لپاره تر هر څه وړاندې عملي حل مهم دی، نه دا چې ستا utility files څومره منظم او بې‌عیبه دي. نو feature جوړ کړه، ښه یې test کړه، ship یې کړه، او refactor یې وروسته هم کېدای شي. 💡\n\nستاسو کوم داسې project دی چې باید نور یې له tweaking لاس واخلئ او بالاخره یې launch کړئ؟ 🚀\n\n#developerlife #freelancing #programming"
   },
-  "control_message_id": 68
+  "control_message_id": 68,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122099587677516061",
+    "122099587725516061",
+    "122099587803516061",
+    "122099587857516061",
+    "122099587905516061",
+    "122099587953516061"
+  ]
 }
