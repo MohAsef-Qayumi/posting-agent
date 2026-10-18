@@ -3,7 +3,7 @@
 Writes a post every day with Claude, renders a branded dark-tech Instagram carousel, sends it to you on Telegram for approval, then publishes to **LinkedIn**, a **Facebook Page**, **Instagram** and **Threads**. Message the bot an idea and it drafts a post about it; Facebook posts can be switched to Dari or Pashto with one tap. Runs free on GitHub Actions.
 
 ```
-08:00 daily ── generate.yml ── Claude writes the post ─ slides rendered ─▶ Telegram preview
+20:00 daily ── generate.yml ── Claude writes the post ─ slides rendered ─▶ Telegram preview
                                                                               │ ✅ / 🔁 / ❌ / 📘 فارسی · پښتو
 your tap ─ Cloudflare worker ─▶ process.yml ─▶ LinkedIn + Facebook Page + Instagram + Threads
            (instant; without it, process.yml runs hourly)

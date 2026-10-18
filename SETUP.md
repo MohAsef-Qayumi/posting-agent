@@ -110,7 +110,7 @@ Open the `preview/…` folder to see the slides. Want a different style or tone?
 5. First run: **Actions** tab → **Generate daily draft → Run workflow**. Within ~3 minutes the draft arrives in Telegram.
 6. Tap **✅ Approve & post**, then **Actions → Process approvals → Run workflow** (or wait — it runs every hour automatically, or instantly once step 9 is done). You'll get a Telegram message with links to the live posts. 🎉
 
-From now on it runs by itself: a draft every day at **08:00 Pakistan time**.
+From now on it runs by itself: a draft every evening at about **20:00 (8 PM) Pakistan time** (if GitHub skips that run, a backup starts one by 22:00).
 
 ## 8. Threads (15 min)
 

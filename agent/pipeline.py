@@ -310,7 +310,20 @@ def process_updates() -> list[dict]:
 
     _expire_old_drafts()
     store.prune_drafts()
+    _ensure_daily_draft(dispatch)
     return dispatch
+
+
+def _ensure_daily_draft(dispatch: list[dict], by_hour: int = 22) -> None:
+    """Safety net: GitHub sometimes delays or skips scheduled runs. No draft by 22:00 → start one (once a day)."""
+    today = f"{now():%Y-%m-%d}"
+    if now().hour < by_hour or any(d["id"].startswith(today) for d in store.all_drafts()):
+        return
+    if store.get_state("daily", {}).get("backup_requested") == today:
+        return
+    store.set_state("daily", {"backup_requested": today})
+    dispatch.append({})
+    telegram.send("⏰ Today's evening draft didn't arrive (GitHub skipped or delayed it) — writing it now.")
 
 
 def _handle_button(cb: dict, dispatch: list[dict]) -> None:

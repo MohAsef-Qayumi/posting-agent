@@ -2,7 +2,7 @@ name: Generate daily draft
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # 08:00 Pakistan time (UTC+5)
+    - cron: "41 14 * * *"   # 19:41 Pakistan time (UTC+5) — off the hour, when GitHub skips fewer scheduled runs
   workflow_dispatch:
     inputs:
       pillar:
