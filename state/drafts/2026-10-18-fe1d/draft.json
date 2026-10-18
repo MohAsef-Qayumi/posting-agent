@@ -1,0 +1,87 @@
+{
+  "id": "2026-10-18-fe1d",
+  "created": "2026-10-18T22:33:57+05:00",
+  "status": "pending",
+  "pillar": "Mindset",
+  "topic": "Overcoming Developer Perfectionism and Actually Shipping Projects",
+  "idea": "",
+  "post": {
+    "topic": "Overcoming Developer Perfectionism and Actually Shipping Projects",
+    "linkedin_text": "Perfectionism is just fear disguised as high professional standards.\n\nEarly in my journey, I would spend weeks refactoring folder structures, endlessly tweaking state management, and rewriting code before users even saw a screen.\n\nResult? Zero launched projects and lots of abandoned GitHub repositories.\n\nHere is what real-world client work taught me:\n\n• Working code in production always beats pristine code on localhost.\n• Clients pay you to solve their business bottleneck, not to craft an untouchable design pattern.\n• You cannot optimize user feedback you have never collected.\n\nToday, I follow a simple rule: Make it work, make it reliable, then make it clean.\n\nIf you wait until you are 100% proud of every single line of code, you waited too long to ship.\n\nBuild the MVP. Solve the core pain point. Push it live, collect real data, and refactor with actual user context.\n\nWhat is one project sitting on your hard drive that is ready to ship if you just let go of perfection?\n\n#webdevelopment #freelancing #softwareengineering #codinglife #developerjourney",
+    "facebook_text": "Early in my dev journey, I thought great developers wrote spotless code on the very first try. The truth? Perfectionism usually just hides the fear of putting your work out there.\n\nClients and users care about working solutions, not whether your utility files are organized flawlessly. Build the feature, test it thoroughly, ship it, and refactor later. 💡\n\nWhat is one project you need to stop tweaking and finally launch? 🚀\n\n#developerlife #freelancing #programming",
+    "threads_text": "Perfectionism is developer procrastination in a trench coat.\n\nI wasted months rewriting architectures for apps nobody ever used. Real progress started when I focused on shipping working solutions instead of flawless code.\n\nMake it work first. Make it clean second.\n\nWhat project are you holding back from deploying right now?",
+    "instagram_caption": "Perfectionism kills more developer careers than bad code ever will.\n\nHere is what I wish I understood sooner about shipping real projects:\n\n💡 Working software in production beats clean code sitting on your localhost\n💡 Clients pay for solved business problems, not your folder architecture\n💡 You cannot learn from feedback on apps you never launch\n💡 Build it, make it reliable, and refactor with real user data\n\nStop waiting for the code to look flawless before you hit deploy.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "webdevelopment",
+      "softwareengineering",
+      "fullstackdeveloper",
+      "freelancingtips",
+      "codingmindset",
+      "developerjourney",
+      "buildinpublic",
+      "learnprogramming",
+      "programmerlife",
+      "javascriptdeveloper",
+      "codercommunity",
+      "techmindset",
+      "solodev",
+      "indiehackers"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "*Perfectionism* is killing your dev career",
+        "body": "Honest lessons on shipping, client expectations, and making real progress.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Done beats perfect every time",
+        "body": "Working code in production teaches you more in one weekend than refactoring on localhost for six months.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Clients pay for solved problems",
+        "body": "Clients care if their users can checkout smoothly and log in fast, not how clever your abstractions look.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Follow the three-step rule",
+        "body": "Make it work first. Make it reliable second. Make it elegant only when performance or maintenance demands it.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Deploy to defeat imposter syndrome",
+        "body": "Confidence does not come from memorizing documentation. It comes from repeatedly shipping solutions and fixing live bugs.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A carousel sharing honest mindset advice on overcoming developer perfectionism and learning to ship projects consistently.",
+    "written_by": "gemini/gemini-flash-latest",
+    "pillar": "Mindset"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg",
+    "slide_06.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Early in my dev journey, I thought great developers wrote spotless code on the very first try. The truth? Perfectionism usually just hides the fear of putting your work out there.\n\nClients and users care about working solutions, not whether your utility files are organized flawlessly. Build the feature, test it thoroughly, ship it, and refactor later. 💡\n\nWhat is one project you need to stop tweaking and finally launch? 🚀\n\n#developerlife #freelancing #programming",
+    "fa": "اوایل کارم در دنیای برنامه‌نویسی، فکر می‌کردم برنامه‌نویس‌های عالی همو بار اول کد کاملاً پاک و بی‌نقص می‌نویسند. اما حقیقت چیست؟ کمال‌گرایی اکثراً فقط ترس از نشان دادن کارت به دیگران را پنهان می‌کند.\n\nبرای کلایت‌ها و یوزرها یک راه‌حل کارآمد مهم است، نه اینکه فایل‌های utility تان صددرصد بی‌عیب چیده شده باشد یا نی. Feature را بسازید، درست test کنید، ship کنید و refactor را بمانید برای بعد. 💡\n\nکدام پروژه‌تان است که باید از دست‌کاری زیادش دست بکشید و بالاخره لانچش کنید؟ 🚀\n\n#developerlife #freelancing #programming",
+    "ps": "د خپل dev journey په پیل کې، ما فکر کاوه چې تکړه developers له همغه لومړي ځله بې‌عیبه code لیکي. خو حقیقت؟ Perfectionism ډېری وخت یوازې د خپل کار د ښکاره کولو وېره پټوي.\n\nد clients او users لپاره تر هر څه وړاندې عملي حل مهم دی، نه دا چې ستا utility files څومره منظم او بې‌عیبه دي. نو feature جوړ کړه، ښه یې test کړه، ship یې کړه، او refactor یې وروسته هم کېدای شي. 💡\n\nستاسو کوم داسې project دی چې باید نور یې له tweaking لاس واخلئ او بالاخره یې launch کړئ؟ 🚀\n\n#developerlife #freelancing #programming"
+  },
+  "control_message_id": 68
+}
