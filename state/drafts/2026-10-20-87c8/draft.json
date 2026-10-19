@@ -1,7 +1,7 @@
 {
   "id": "2026-10-20-87c8",
   "created": "2026-10-20T01:14:15+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Career",
   "topic": "How to Turn Portfolio Projects into Case Studies That Land Clients",
   "idea": "",
@@ -78,11 +78,37 @@
     "slide_05.jpg",
     "slide_06.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7518043896103305216/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122100516045516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/DesG4gNl7_q/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/DesG8qYnRQJ"
+    }
+  },
   "facebook_texts": {
     "en": "A live demo and a GitHub link aren't enough to stand out anymore. 💻\n\nClients and recruiters rarely dig through lines of code. What really gets their attention is the story behind it: the business problem you solved, the technical trade-offs you made, and the actual results.\n\nFrame your portfolio projects as brief case studies instead of plain code dumps, and watch how conversations change.\n\nDo you include write-ups on your portfolio, or just direct links to code? 🤔\n\n#devcareer #freelancing #webdeveloper",
     "fa": "یک لایو دمو و لینک گیت‌هب دیگه برای برجسته شدن کفایت نمی‌کنه. 💻\n\nکلانتا (مشتریان) و ریکروترها کم پیش میاد که بشینن لابلای خط‌های کود رو بخوان. چیزی که واقعاً توجه‌شان رو جلب می‌کنه، داستان پشت همون کوده: همون مشکل بیزینسی که حل کردین، تصمیمات تخنیکی که گرفتین و نتیجه نهایی.\n\nپروژه‌های پورتفولیوی خوده‌تان ره به جای اینکه فقط یک‌جای کثیف از کود باشن، به شکل کیس استدی‌های کوتاه عیار کنید و ببینید که گپ زدن‌ها چطور تغییر می‌کنه.\n\nآیا شما در پورتفولیوی خوده‌تان توضیحات و نوشته‌ها را می‌گمارید، یا صرفاً لینک مستقیم کود را می‌مانید؟ 🤔\n\n#devcareer #freelancing #webdeveloper",
     "ps": "يو لایو ډیمو او د GitHub لینک نور د ځان ښودلو لپاره کافي نه دي۔ 💻\n\nکلینټونه او ریکروټران ډېر کم د کوډ په کرښو ځان ستړي کوي۔ هغه څه چې واقعتاً د دوی پام ځان ته اړوي، د هغې تر شا کیسه ده: کومه سوداګریزه ستونزه مو حل کړه، کوم تخنیکي انتخابونه مو وکړل، او اصلي پایلې یې څه وې۔\n\nخپل پورټفولیو پروجکتونه د ساده کوډ ډمپ پر ځای د لنډو کېس سټډیز (case studies) په توګه وړاندې کړئ، او بیا وګورئ چې خبرې اترې څنګه بدلیږي۔\n\nتاسو په خپل پورټفولیو کې توضیحات (write-ups) ورکوئ، که یوازې د کوډ مستقیم لینکونه؟ 🤔\n\n#devcareer #freelancing #webdeveloper"
   },
-  "control_message_id": 82
+  "control_message_id": 82,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122100515631516061",
+    "122100515733516061",
+    "122100515805516061",
+    "122100515859516061",
+    "122100515925516061",
+    "122100515979516061"
+  ]
 }
