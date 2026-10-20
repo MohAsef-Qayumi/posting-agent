@@ -1,0 +1,79 @@
+{
+  "id": "2026-10-20-cef9",
+  "created": "2026-10-20T23:45:07+05:00",
+  "status": "pending",
+  "pillar": "Career",
+  "topic": "How to handle technical test anxiety during developer interviews",
+  "idea": "",
+  "post": {
+    "topic": "How to handle technical test anxiety during developer interviews",
+    "linkedin_text": "Live coding interviews make even experienced developers freeze up.\n\nIt is rarely about your actual coding ability.\n\nIt is usually about the pressure of performing live under a microscope.\n\nHere is how I learned to stay calm and pass technical tests:\n\n• Talk through your logic before writing any code\n• Start with a naive working solution, then optimize\n• Treat the interviewer like a teammate, not an examiner\n\nCommunication matters much more than getting the syntax 100 percent right on the first try.\n\nHow do you usually handle live coding tests?\n\n#SoftwareEngineering #InterviewTips #WebDevelopment #CareerGrowth",
+    "facebook_text": "Live coding interviews make many developers freeze up, but it is rarely about your actual coding skills. It is all about managing pressure. Talk through your logic, start with a simple working solution, and treat the interviewer like a teammate! 💻✨\n\nHow do you usually handle technical tests?\n\n#CodingInterviews #TechCareers",
+    "threads_text": "Live coding interviews are stressful not because of the code, but because of the performance pressure.\n\nTalk out loud. Interviewers care more about how you think than if your syntax is perfect.\n\nWhat is your go-to strategy for live coding?\n\n#interview",
+    "instagram_caption": "Live coding interviews make even experienced developers freeze up. It is rarely about your coding ability and almost always about the pressure.\n\n🧠 Talk through your logic before typing\n💡 Start with a naive solution, then optimize\n🤝 Treat the interviewer like a teammate\n\nCommunication wins over perfect syntax every single time.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "softwareengineer",
+      "webdeveloper",
+      "codinginterviews",
+      "programminglife",
+      "careeradvice",
+      "fullstackdeveloper",
+      "remotework",
+      "flutterdev",
+      "pythondeveloper",
+      "techcareers",
+      "javascriptdeveloper",
+      "developerlife",
+      "codingtips",
+      "softwaredeveloper"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "How to *survive* live coding interviews",
+        "body": "Stop letting interview anxiety ruin your technical tests.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Talk out loud constantly",
+        "body": "Your interviewer cannot read your mind. Explaining your thought process shows problem-solving skills even if you get stuck.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Build the brute force first",
+        "body": "Do not optimize prematurely. Write a working naive solution first, then talk about how to make it more efficient.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Ask clarifying questions",
+        "body": "Never jump straight into coding. Confirm edge cases, expected input sizes, and constraints to show engineering maturity.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A four-slide carousel sharing practical strategies to stay calm and succeed in live technical coding interviews.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Career"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Live coding interviews make many developers freeze up, but it is rarely about your actual coding skills. It is all about managing pressure. Talk through your logic, start with a simple working solution, and treat the interviewer like a teammate! 💻✨\n\nHow do you usually handle technical tests?\n\n#CodingInterviews #TechCareers",
+    "fa": "انترویوهای Live coding باعث میشه خیلی از دولوپرها دست‌پاچه شوند، اما این موضوع به ندرت به مهارت واقعی کدنویسی‌تان ربط داره. اصل گپ سر مدیریت و کنترول فشار است. منطق فکرتان را به زبان بیاورید و تشریح کنید، با یک راه‌حل ساده که کار بدهد شروع کنید، و با انترویوکننده مثل یک هم‌تیمی رفتار کنید! 💻✨\n\nشما معمولاً با technical testها چطور برخورد می‌کنید؟\n\n#CodingInterviews #TechCareers",
+    "ps": "ډېر ډیولپرز په Live coding interviews کې وارخطا کېږي، خو دا ډېر لږ ستاسو د کوډینګ له اصلي مهارت سره تړاو لري. خبره ټوله د فشار د مدیریت ده. خپل logic ورته تشریح کړئ، له یوه ساده او کارنده حل څخه پیل وکړئ، او انټرویو کوونکي سره د یوه ټیم ملګري غوندې مخته لاړ شئ! 💻✨\n\nتاسو معمولاً technical tests څنګه مدیریت کوئ؟\n\n#CodingInterviews #TechCareers"
+  },
+  "control_message_id": 95
+}
