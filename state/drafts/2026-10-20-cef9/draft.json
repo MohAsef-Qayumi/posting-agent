@@ -1,7 +1,7 @@
 {
   "id": "2026-10-20-cef9",
   "created": "2026-10-20T23:45:07+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Career",
   "topic": "How to handle technical test anxiety during developer interviews",
   "idea": "",
@@ -69,11 +69,36 @@
     "slide_04.jpg",
     "slide_05.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7518382910144507905/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122101474065516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/DeuhBLTH1RV/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/DeuhEVWFJq6"
+    }
+  },
   "facebook_texts": {
     "en": "Live coding interviews make many developers freeze up, but it is rarely about your actual coding skills. It is all about managing pressure. Talk through your logic, start with a simple working solution, and treat the interviewer like a teammate! 💻✨\n\nHow do you usually handle technical tests?\n\n#CodingInterviews #TechCareers",
     "fa": "انترویوهای Live coding باعث میشه خیلی از دولوپرها دست‌پاچه شوند، اما این موضوع به ندرت به مهارت واقعی کدنویسی‌تان ربط داره. اصل گپ سر مدیریت و کنترول فشار است. منطق فکرتان را به زبان بیاورید و تشریح کنید، با یک راه‌حل ساده که کار بدهد شروع کنید، و با انترویوکننده مثل یک هم‌تیمی رفتار کنید! 💻✨\n\nشما معمولاً با technical testها چطور برخورد می‌کنید؟\n\n#CodingInterviews #TechCareers",
     "ps": "ډېر ډیولپرز په Live coding interviews کې وارخطا کېږي، خو دا ډېر لږ ستاسو د کوډینګ له اصلي مهارت سره تړاو لري. خبره ټوله د فشار د مدیریت ده. خپل logic ورته تشریح کړئ، له یوه ساده او کارنده حل څخه پیل وکړئ، او انټرویو کوونکي سره د یوه ټیم ملګري غوندې مخته لاړ شئ! 💻✨\n\nتاسو معمولاً technical tests څنګه مدیریت کوئ؟\n\n#CodingInterviews #TechCareers"
   },
-  "control_message_id": 95
+  "control_message_id": 95,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122101473615516061",
+    "122101473717516061",
+    "122101473777516061",
+    "122101473897516061",
+    "122101473987516061"
+  ]
 }
