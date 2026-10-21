@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-21-2b68",
+  "created": "2026-10-21T23:55:42+05:00",
+  "status": "pending",
+  "pillar": "Tech",
+  "topic": "Supply chain security in modern web development and dependency management",
+  "idea": "",
+  "post": {
+    "topic": "Supply chain security in modern web development and dependency management",
+    "linkedin_text": "Never blindly trust third-party packages in your stack.\n\nRecent supply chain attacks on package registries are a sharp wake-up call for every developer. It is easy to run npm install or pip install without thinking twice about what is inside that version.\n\n→ Pin your exact dependency versions instead of using loose ranges.\n→ Run regular vulnerability audits like npm audit or pip-audit.\n→ Inspect unfamiliar packages before adding them to production.\n\nSecurity is not just a backend or infrastructure problem. It starts with the very first line of your package configuration file.\n\nHow do you currently audit third-party dependencies in your projects?\n\n#SoftwareSecurity #WebDevelopment #Python #NodeJS #DeveloperTips",
+    "facebook_text": "Third-party package compromises are on the rise. Always pin your versions and run regular audits on your dependencies! 🛡️ How do you keep your app's supply chain secure? #WebSecurity #DeveloperLife",
+    "threads_text": "A compromised dependency can sneak right into your app through a simple package update. Never blindly trust third-party registries. Pin your versions and audit your packages regularly. How often do you check your dependency tree?",
+    "instagram_caption": "Third-party package compromises are a serious reminder to protect your software supply chain 🛡️\n\n🔒 Always pin exact versions in your package files instead of using loose ranges\n🔍 Run automated vulnerability scans like npm audit or pip-audit regularly\n📦 Inspect new or unfamiliar dependencies before adding them to production code\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "softwaresecurity",
+      "webdevelopment",
+      "python",
+      "nodejs",
+      "fullstack",
+      "backenddev",
+      "coderlife",
+      "programmingtips",
+      "softwareengineering",
+      "devcommunity",
+      "securityfirst",
+      "javascript",
+      "pythonprogramming",
+      "websecurity",
+      "cleancode"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Protect your app from *supply chain* attacks",
+        "body": "Practical steps to secure your dependencies.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Pin your dependency versions",
+        "body": "Avoid using loose ranges like carets or tildes for critical packages. Lock down exact versions to prevent unexpected malicious updates.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "code",
+        "title": "Audit dependencies regularly",
+        "body": "Run built-in audit commands in your CI pipeline to catch known vulnerabilities early.",
+        "code": "pip-audit\nnpm audit\npnpm audit --production",
+        "language": "bash"
+      },
+      {
+        "kind": "point",
+        "title": "Inspect unknown packages",
+        "body": "Check repository activity, maintainer reputation, and source code before adding a new third-party library to production.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "Carousel slides explaining how developers can secure their applications against supply chain attacks through dependency pinning and auditing.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Tech"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Third-party package compromises are on the rise. Always pin your versions and run regular audits on your dependencies! 🛡️ How do you keep your app's supply chain secure? #WebSecurity #DeveloperLife",
+    "fa": "حملات بالای پکیج‌های تِرد‌پارتی (third-party) روزبه‌روز زیادتر میشه. همیشه ورژن‌هایکتان را پین (pin) کنید و دیپندسی‌های (dependencies) خود را مسلسلس چک کنید! 🛡️ شما چطور امنیتِ ساپلای چین (supply chain) اپلیکیشن‌تان را تامین می‌کنید؟\n\n#WebSecurity #DeveloperLife",
+    "ps": "د third-party packages امنیتي خطرات او هک کېدل ورځ تر بلې مخ په زیاتېدو دي.\nتل خپل versions پین (pin) کړئ او په خپلو dependencies په منظم ډول audit کوئ! 🛡️\n\nتاسو د خپل app د supply chain امنیت څنګه ساتئ؟\n#WebSecurity #DeveloperLife"
+  },
+  "control_message_id": 121
+}
