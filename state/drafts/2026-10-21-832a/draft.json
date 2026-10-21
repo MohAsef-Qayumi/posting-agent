@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-21-832a",
+  "created": "2026-10-21T23:36:37+05:00",
+  "status": "pending",
+  "pillar": "Tech",
+  "topic": "Supply chain security for Python and Node.js dependencies",
+  "idea": "",
+  "post": {
+    "topic": "Supply chain security for Python and Node.js dependencies",
+    "linkedin_text": "Never blindly install packages from PyPI or npm without checking.\n\nRecent supply chain attacks on popular open-source packages prove that even trusted registries can host credential stealers and backdoors. As full-stack developers, we pull in dozens of third-party libraries daily.\n\nProtecting your apps doesn't require paranoia, just practical safeguards:\n\n• Pin exact dependency versions in your package.json or requirements.txt\n• Use lockfiles and audit commands in your CI pipeline\n• Audit maintainer changes and download counts before adding new packages\n• Never run untrusted scripts or install unknown libraries on your main work machine\n\nSecurity is part of the architecture, not an afterthought.\n\nHow do you currently audit your project dependencies?\n\n#SoftwareSecurity #Python #NodeJS #WebDevelopment #DeveloperTips",
+    "facebook_text": "Supply chain attacks on open-source registries are a real reminder that we need to be careful with third-party packages. Always lock your versions and run security audits! 🔒\n\nHow do you check your dependencies?\n\n#WebDev #Security",
+    "threads_text": "Supply chain attacks on package registries are getting too common. Blindly running npm install or pip install is a real risk. Pin your versions, use lockfiles, and run security audits regularly. What is your go-to tool for checking vulnerabilities?",
+    "instagram_caption": "Third-party packages make our lives easier, but they can also introduce hidden risks. 🛑\n\nHere is how to keep your codebase safe:\n\n🔒 Always pin exact dependency versions\n🔍 Run automated dependency audits in CI\n📦 Inspect new or unfamiliar packages\n💻 Keep your dev environment isolated\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "webdevelopment",
+      "python",
+      "nodejs",
+      "fullstack",
+      "softwareengineering",
+      "coder",
+      "devlife",
+      "javascript",
+      "backend",
+      "security",
+      "computerscience",
+      "softwaredeveloper",
+      "techcommunity",
+      "codingtips"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Stop *Blindly* Installing Open-Source Packages",
+        "body": "Protect your Python and Node.js projects from supply chain attacks.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Always pin exact versions",
+        "body": "Avoid using loose version ranges like caret or tilde in production. Pinning exact versions prevents malicious updates from sneaking into your builds.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "code",
+        "title": "Automate audits in CI",
+        "body": "Catch known vulnerabilities and compromised packages before they reach production servers.",
+        "code": "npm audit\npip-audit\n# Run these on every PR",
+        "language": "bash"
+      },
+      {
+        "kind": "point",
+        "title": "Check package health",
+        "body": "Before adding a new library, look at its download stats, recent commit activity, and repository maintainers to spot anomalies.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A carousel explaining how full-stack developers can protect their Python and Node.js projects from supply chain security vulnerabilities.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Tech"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Supply chain attacks on open-source registries are a real reminder that we need to be careful with third-party packages. Always lock your versions and run security audits! 🔒\n\nHow do you check your dependencies?\n\n#WebDev #Security",
+    "fa": "حمله به زنجیره تأمین در پکیج‌‌های اوپن‌سورس یک یادآوری جدی است که باید وقت استفاده از پکیج‌های سوم‌شخص بسیار احتیاط کنیم. همیشه ورژن‌ها را لاک (Lock) کنید و آودیت‌های امنیتی را اجرا نمایید! 🔒\n\nشما چطور دپندنسی‌های خود را چک می‌کنید؟\n\n#WebDev #Security",
+    "ps": "د open-source رجسټریو په سر کې supply chain حملې دا ډېرې ښه را یادوي چې موږ باید د third-party پیکجونو په برخه کې ډېر احتیاط وکړو. تل خپلېورژنونه lock کوئ او امنیتي audits چلوئ! 🔒\n\nتاسو خپل ډېپېډنسۍ (dependencies) څنګه چک کوئ؟\n\n#WebDev #Security"
+  },
+  "control_message_id": 109
+}
