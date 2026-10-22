@@ -1,7 +1,7 @@
 {
   "id": "2026-10-22-7180",
   "created": "2026-10-22T23:33:46+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Startup",
   "topic": "Building in public as a solo founder solving everyday problems",
   "idea": "",
@@ -69,11 +69,36 @@
     "slide_04.jpg",
     "slide_05.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7519105299480272896/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122103376851516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/Dezph1TAbNP/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/DezplxWmd7l"
+    }
+  },
   "facebook_texts": {
     "en": "Stop building random apps nobody asked for. At JAEXS Solutions, we focus on a simple rule: find a real everyday problem first, then code the solution. 💻✨\n\nHow do you usually find your project ideas?\n\n#BuildInPublic #StartupJourney",
     "fa": "دیگه ساختن اپلیکیشن‌های بی‌هدفی ره که هیچ‌کس لازم نداره بس کنین. ما در JAEXS Solutions سر یک اصل ساده تمرکز داریم: اول یک مشکل واقعی روزمره ره پیدا کن، بعدش راه‌حلش ره کد بزن. 💻✨\n\nشما معمولاً چطور ایده‌های پروژه‌تان ره پیدا می‌کنین؟\n\n#BuildInPublic #StartupJourney",
     "ps": "بېځایه اپونه مه جوړوئ چې څوک یې غوښتنه نه کوي. دلته په JAEXS Solutions کې، زموږ یوه ساده قاعده ده: لومړی د کورنۍ یا ورځني ژوند یو ریښتینی مشکل پیدا کړئ، او بیا ورته د حل لاره کوډ کړئ. 💻✨\n\nتاسو معمولا د خپلو پروژو لپاره ایدیاګانې څنګه پیدا کوئ؟\n\n#BuildInPublic #StartupJourney"
   },
-  "control_message_id": 135
+  "control_message_id": 135,
+  "facebook_lang": "en",
+  "photo_ids": [
+    "122103376587516061",
+    "122103376641516061",
+    "122103376701516061",
+    "122103376743516061",
+    "122103376803516061"
+  ]
 }
