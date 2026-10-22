@@ -1,0 +1,79 @@
+{
+  "id": "2026-10-22-7180",
+  "created": "2026-10-22T23:33:46+05:00",
+  "status": "pending",
+  "pillar": "Startup",
+  "topic": "Building in public as a solo founder solving everyday problems",
+  "idea": "",
+  "post": {
+    "topic": "Building in public as a solo founder solving everyday problems",
+    "linkedin_text": "Stop building apps nobody asked for.\n\nAt JAEXS Solutions, we focus on a simple rule: find a real everyday problem first, then code the solution.\n\nToo many developers fall in love with complex tech stacks instead of usable products.\n\n→ Talk to real users.\n→ Validate the pain point.\n→ Write the simplest working code.\n\nBuilding in public keeps you honest. You share the messy bugs, the pivot decisions, and the actual progress.\n\nHow do you usually find your project ideas?\n\n#StartupJourney #BuildInPublic #SoftwareDevelopment #FullStackDeveloper",
+    "facebook_text": "Stop building random apps nobody asked for. At JAEXS Solutions, we focus on a simple rule: find a real everyday problem first, then code the solution. 💻✨\n\nHow do you usually find your project ideas?\n\n#BuildInPublic #StartupJourney",
+    "threads_text": "Stop building complex apps nobody asked for. \n\nAt JAEXS Solutions, we focus on finding real everyday problems first, then writing the code.\n\nBuilding in public keeps your focus on actual utility instead of fancy tech stacks.\n\nHow do you find your project ideas?",
+    "instagram_caption": "Stop building random apps nobody asked for.\n\nAt JAEXS Solutions, we focus on a simple rule: find a real everyday problem first, then code the solution.\n\n🧩 Look for repetitive friction\n💬 Talk to people facing the issue\n🛠️ Build the simplest working prototype\n\nBuilding in public keeps you accountable and helps you pivot before wasting months on unused code.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "webdevelopment",
+      "fullstack",
+      "flutterdev",
+      "python",
+      "java",
+      "softwareengineer",
+      "codinglife",
+      "developer",
+      "techstartup",
+      "buildinpublic",
+      "startupjourney",
+      "solopreneur",
+      "appdevelopment"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Stop building *random apps* nobody asked for",
+        "body": "How to find real problems to solve as a developer.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Look for friction",
+        "body": "Notice repetitive manual tasks in your daily routine. If it annoys you, it probably annoys others too.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Validate before coding",
+        "body": "Talk to people before opening your IDE. Make sure the pain point is real and worth solving.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Build in public",
+        "body": "Share your progress, bugs, and lessons. Transparency builds trust long before your product launches.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "Carousel slides explaining how to find real-world problems to solve as a developer instead of building random applications.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Startup"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Stop building random apps nobody asked for. At JAEXS Solutions, we focus on a simple rule: find a real everyday problem first, then code the solution. 💻✨\n\nHow do you usually find your project ideas?\n\n#BuildInPublic #StartupJourney",
+    "fa": "دیگه ساختن اپلیکیشن‌های بی‌هدفی ره که هیچ‌کس لازم نداره بس کنین. ما در JAEXS Solutions سر یک اصل ساده تمرکز داریم: اول یک مشکل واقعی روزمره ره پیدا کن، بعدش راه‌حلش ره کد بزن. 💻✨\n\nشما معمولاً چطور ایده‌های پروژه‌تان ره پیدا می‌کنین؟\n\n#BuildInPublic #StartupJourney",
+    "ps": "بېځایه اپونه مه جوړوئ چې څوک یې غوښتنه نه کوي. دلته په JAEXS Solutions کې، زموږ یوه ساده قاعده ده: لومړی د کورنۍ یا ورځني ژوند یو ریښتینی مشکل پیدا کړئ، او بیا ورته د حل لاره کوډ کړئ. 💻✨\n\nتاسو معمولا د خپلو پروژو لپاره ایدیاګانې څنګه پیدا کوئ؟\n\n#BuildInPublic #StartupJourney"
+  },
+  "control_message_id": 135
+}
