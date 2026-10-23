@@ -1,7 +1,7 @@
 {
   "id": "2026-10-23-bb3b",
   "created": "2026-10-23T23:25:54+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Code",
   "topic": "Debouncing API requests in React and Flutter to prevent performance lag",
   "idea": "",
@@ -77,11 +77,37 @@
     "slide_05.jpg",
     "slide_06.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7519471717103116288/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122104274409516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/De2QLj2DVXY/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/De2QQf_Iy8v"
+    }
+  },
   "facebook_texts": {
     "en": "Stop letting every keystroke hammer your API! 🛑 Searching on every character change wastes bandwidth and hurts performance. A simple 400ms debounce solves this instantly in both React and Flutter. Keep your UI smooth and save your server.\n\nHow do you handle input debouncing in your projects? 💻\n\n#WebDevelopment #CodingTips",
     "fa": "بیشتر از این نگذارید که هر دکمه‌ای که فشار میدین API شما را بمباران کنه! 🛑 جستجو کردن با هر تغییر کاراکتر، پهنای باند را ضایع می‌ساز هم سیستم را کُند می‌کنه. یک debounce ساده‌ی ۴۰۰ میلی‌ثانیه‌ای این مشکل را هم در React و هم در Flutter فوراً حل می‌کنه. UI خود را نرم و روان نگه دارید و سرور خود را نجات بدید.\n\nشما در پروژه‌های خود چطور input debouncing را هندل می‌کنید؟ 💻\n\n#WebDevelopment #CodingTips",
     "ps": "د هر کلیما په وهلو سره خپل API مه وژنئ! 🛑 د هر توري په بدلیدو سره سرچ کول انټرنیټ (بینډ ویت) ضایع کوي او کارکردګۍ ته زیان رسوي. یو ساده 400ms debounce په دواړو React او Flutter کې دا ستونزه سمدلاسه هواروي. خپل UI سم او روان وساتئ او خپل سرور وژغورئ.\n\nتاسو په خپلو پروژو کې د input debouncing څنګه اداره کوئ؟ 💻\n\n#WebDevelopment #CodingTips"
   },
-  "control_message_id": 162
+  "control_message_id": 162,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122104274013516061",
+    "122104274085516061",
+    "122104274133516061",
+    "122104274187516061",
+    "122104274241516061",
+    "122104274349516061"
+  ]
 }
