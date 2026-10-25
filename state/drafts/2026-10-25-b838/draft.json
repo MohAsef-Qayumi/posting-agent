@@ -1,7 +1,7 @@
 {
   "id": "2026-10-25-b838",
   "created": "2026-10-25T22:03:53+05:00",
-  "status": "pending",
+  "status": "partial",
   "pillar": "Mindset",
   "topic": "Mindset: Why saying no to the wrong clients saves your freelance career",
   "idea": "",
@@ -69,11 +69,36 @@
     "slide_04.jpg",
     "slide_05.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7520170569183674369/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122106212103516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/De7N8sVlymH/"
+    },
+    "threads": {
+      "ok": false,
+      "error": "POST 28676840772010160/threads_publish → 400: The requested resource does not exist"
+    }
+  },
   "facebook_texts": {
     "en": "The hardest skill to learn as a freelancer isn't coding. It's saying no to the wrong clients. When you take on a low-paying, high-stress project, you are actually saying no to a great one. Protect your time and energy! 🛑💻\n\nHave you ever walked away from a project before it started?\n\n#FreelanceLife #DeveloperMindset",
     "fa": "سخت‌ترین هنر در فریلنسری کود کردن نیست. بلکې نه گفتن به کلایینت‌های نادرست است. وقتی یک پراجکت کم‌معاش و پر از استرس را می‌پذیرید، در واقع به یک پراجکت عالی «نه» می‌گویید. از وقت و انرژی خود محافظت کنید! 🛑💻\n\nتا حالا شده پیش از شروع یک پراجکت، از آن پشیمان شوید و منصرف گردید؟\n\n#FreelanceLife #DeveloperMindset",
     "ps": "د یو freelancer په توګه تر ټولو سخته مهارت، د کوډنګ زده کول نه دي. بلکې د غلطو کلینټونو (clients) ته نه (no) ویل دي. کله چې تاسو یو کَم معاشه او ډېر فشار لرونکی پروجکت اخلئ، تاسو په حقیقت کې یو ښه پروجکت ته نه (no) وایئ. خپل وخت او انرژي وساتئ! 🛑💻\n\nتاسو تر اوسه له کوم پروجکت څخه د پیل کېدو نه مخکې مخ اړولی دی؟\n\n#FreelanceLife #DeveloperMindset"
   },
-  "control_message_id": 190
+  "control_message_id": 190,
+  "facebook_lang": "en",
+  "photo_ids": [
+    "122106211857516061",
+    "122106211905516061",
+    "122106211965516061",
+    "122106212019516061",
+    "122106212067516061"
+  ]
 }

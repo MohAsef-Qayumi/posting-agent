@@ -1,7 +1,7 @@
 {
   "id": "2026-10-24-812b",
   "created": "2026-10-24T22:36:54+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Engagement",
   "topic": "ORM vs Raw SQL in Modern Full-Stack Development",
   "idea": "",
@@ -85,11 +85,38 @@
     "slide_06.jpg",
     "slide_07.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7520170137711427584/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122106209481516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/De7NxRRlHkp/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/De7N09YFvmh"
+    }
+  },
   "facebook_texts": {
     "en": "Be honest: do you still reach for a heavy ORM on new projects, or have you moved back toward raw SQL and query builders? 🛠️\n\nORMs make prototyping fast, but nothing beats knowing the exact SQL hitting your database when traffic scales.\n\nWhat is your default choice for databases right now? 👇\n\n#fullstack #coding #developers",
     "fa": "راستش را بگویید: آیا هنوز هم برای پروژه‌های نو سراغ ORMهای سنگین می‌روید، یا دوباره برگشتید به سمت raw SQL و query builderها؟ 🛠️\n\nORMها ساخت prototype را بسیار تیز و آسان می‌کنند، ولی وقتی ترافیک بلند می‌رود، هیچ چیز جای این را نمی‌گیرد که دقیق بفهمید چه SQL بالای دیتابیس‌تان اجرا می‌شود.\n\nفعلاً انتخاب اول (default) شما برای دیتابیس چی است؟ 👇\n\n#fullstack #coding #developers",
     "ps": "رښتیا ووایاست: ایا په نوو پروژو کې لا هم یو دروند ORM کاروئ، که بېرته raw SQL او query builders ته راګرځېدلي یاست؟ 🛠️\n\nکه څه هم ORMs د prototyping کار خورا ګړندی کوي، خو کله چې traffic لوړ شي، هېڅ شی د دې ځای نشي نیولی چې سړی دقیق پوه شي database ته یې کوم SQL لګېږي.\n\nدا مهال د databases لپاره ستاسو default انتخاب کوم دی؟ 👇\n\n#fullstack #coding #developers"
   },
-  "control_message_id": 177
+  "control_message_id": 177,
+  "facebook_lang": "en",
+  "photo_ids": [
+    "122106208983516061",
+    "122106209073516061",
+    "122106209121516061",
+    "122106209253516061",
+    "122106209301516061",
+    "122106209355516061",
+    "122106209403516061"
+  ]
 }
