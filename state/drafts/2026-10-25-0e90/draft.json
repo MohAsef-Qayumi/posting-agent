@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-25-0e90",
+  "created": "2026-10-25T22:51:58+05:00",
+  "status": "pending",
+  "pillar": "Mindset",
+  "topic": "Mindset: Why billing by project value beats hourly rates every time as a freelancer",
+  "idea": "",
+  "post": {
+    "topic": "Mindset: Why billing by project value beats hourly rates every time as a freelancer",
+    "linkedin_text": "Hourly rates punish you for getting faster and better at your job.\n\nWhen I first started freelancing, tracking every billable minute felt safe. But it capped my income and created friction with clients every time a task took longer than expected.\n\nMoving to value-based pricing changed everything.\n\n• Focus shifts from time spent to problem solved\n• Clients care about results, not hours logged\n• Your efficiency finally becomes your financial advantage\n\nIt takes practice to estimate the real business value of a web app or mobile feature. But once you stop trading hours for dollars, your freelance business scales differently.\n\nHow do you currently price your freelance development projects?\n\n#FreelanceDeveloper #WebDevelopment #TechCareers #SoftwareEngineering",
+    "facebook_text": "Hourly rates punish you for getting faster at writing code. 🛑\n\nWhen you charge by the project's value instead of the hour, your efficiency becomes your superpower. Clients get the result they need, and you get paid for your expertise, not your stopwatch.\n\nHow do you price your freelance work right now? 👇\n\n#FreelanceDeveloper #WebDev",
+    "threads_text": "Hourly billing punishes you for getting faster at writing code.\n\nWhen you charge by the hour, your efficiency cuts your own paycheck. Value-based pricing shifts the focus to the actual problem you are solving.\n\nDo you charge hourly or by project?",
+    "instagram_caption": "Hourly rates punish you for getting faster and better at your job.\n\n⏳ Tracking every billable minute caps your income and creates friction.\n💡 Value-based pricing shifts the focus from time spent to problems solved.\n🚀 Your coding efficiency finally becomes your financial advantage.\n📈 Clients care about business results, not the hours logged on a timer.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "freelancedev",
+      "webdevelopment",
+      "softwareengineer",
+      "fullstackdeveloper",
+      "flutterdev",
+      "pythondev",
+      "programmingtips",
+      "coderlife",
+      "techcareer",
+      "freelancetips",
+      "softwaredevelopment",
+      "developerlife",
+      "mernstack",
+      "codebetter",
+      "devcommunity"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Why Hourly Rates Are *Costing* You Money",
+        "body": "The mindset shift every freelance developer needs to make.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "The Speed Penalty",
+        "body": "When you charge hourly, getting faster and writing better code directly reduces your paycheck. That is the wrong incentive.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Sell Outcomes, Not Time",
+        "body": "Clients do not care about the hours. They care about the deployed app, the fixed bug, or the revenue your feature generates.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Charge For Expertise",
+        "body": "Pricing by project value rewards your years of experience instead of your typing speed. It is fairer for both sides.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A carousel explaining why freelance developers should switch from hourly billing to value-based pricing.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Mindset"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Hourly rates punish you for getting faster at writing code. 🛑\n\nWhen you charge by the project's value instead of the hour, your efficiency becomes your superpower. Clients get the result they need, and you get paid for your expertise, not your stopwatch.\n\nHow do you price your freelance work right now? 👇\n\n#FreelanceDeveloper #WebDev",
+    "fa": "نرخ ساعتوار شمارا سزا می‌دهد که در نویستن کد تیزتر می‌شوید. 🛑\n\nوقتی به جای ساعت، بر اساس ارزښت پروژه قیمت می‌مانید، سرعت و مهارت شما به نقطه قوتتان تبدیل می‌شود. کلایینت‌ها نتیجه‌ای که می‌خواهند را به دست می‌آورند، و شما برای تخصصتان پول می‌گیرید نه برای ساعت‌شمار.\n\nشما فعلاً کار فریلنس تان را چطور قیمت‌گذاری می‌کنید؟ 👇\n\n#FreelanceDeveloper #WebDev",
+    "ps": "په ساعتي نرخونو کارکول ستا د کوډنګ سرعت خرابوي. 🛑\n\nکله چې د ساعت پر ځای د پروژې د ارزښت له مخې پیسې اخلې، نو ستاسو چټکتیا او مهارت ستاسو تر ټولو غټ قوت جوړېږي. کلینټ ته هغه شی په وخت لاس ته ورځي چې غواړي، او تاسو ته ستاسو د تجربې او پوهې پیسې درکول کېږي، نه د ساعت د تېرېدو.\n\nتاسو اوس مهال د خپلو فریلانس کارونو لپاره څنګه قیمت ټاکئ؟ 👇\n\n#FreelanceDeveloper #WebDev"
+  },
+  "control_message_id": 205
+}
