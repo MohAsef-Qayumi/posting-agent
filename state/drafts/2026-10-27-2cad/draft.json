@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-27-2cad",
+  "created": "2026-10-27T01:09:39+05:00",
+  "status": "pending",
+  "pillar": "Career",
+  "topic": "How to structure a developer resume that actually gets past recruiters and lands interviews",
+  "idea": "",
+  "post": {
+    "topic": "How to structure a developer resume that actually gets past recruiters and lands interviews",
+    "linkedin_text": "Recruiters spend six seconds on your resume. Make them count.\n\nMost developer resumes list a wall of tools and framework names. But hiring managers care about what you actually built and the problems you solved.\n\nHere is how to fix your resume today:\n\n• Lead with impact, not just a tech stack\n• Quantify results with real metrics\n• Keep it strictly to one clean page\n• Link directly to live apps and code\n\nShowcase the outcome of your code, not just the syntax you typed.\n\nWhat is the biggest mistake you see on developer resumes?\n\n#WebDevelopment #SoftwareEngineering #CareerAdvice #TechCareers #Programming",
+    "facebook_text": "Recruiters only spend a few seconds looking at your resume. Stop listing random tech stacks and start showing the real impact of your code! 💻✨\n\nWhat is the hardest part of writing a tech resume for you?\n\n#SoftwareEngineer #CareerTips",
+    "threads_text": "Recruiters spend about 6 seconds on your resume.\n\nStop listing twenty tools you barely know.\n\nInstead, show three projects with real links and measurable results.\n\nWhat is the hardest part of job hunting for you?",
+    "instagram_caption": "Recruiters spend seconds on your resume. Make every word count.\n\n🎯 Lead with project impact over tech lists\n📈 Add numbers and metrics to your results\n📄 Keep it strictly to one page\n🔗 Link directly to live apps and clean code\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "softwaredeveloper",
+      "fullstackdev",
+      "webdeveloper",
+      "pythondev",
+      "flutterdev",
+      "reactjs",
+      "careeradvice",
+      "techjobs",
+      "softwareengineering",
+      "codinglife",
+      "developerlife",
+      "remotework",
+      "freelancelife",
+      "techcareer"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Fix Your *Developer Resume* In 4 Steps",
+        "body": "Stop getting ghosted and start landing more interviews.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Focus On Impact",
+        "body": "Do not just list tools. Explain what you built and who used it. Show business value alongside clean code.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Use Real Numbers",
+        "body": "Saying you optimized an API is okay. Saying you reduced API load time by 40 percent gets attention.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Link Your Work",
+        "body": "Always include clickable links to GitHub repositories, live deployments, and case studies. Prove your skills.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A four-slide carousel outlining actionable tips for improving a software developer resume to land more interviews.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Career"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Recruiters only spend a few seconds looking at your resume. Stop listing random tech stacks and start showing the real impact of your code! 💻✨\n\nWhat is the hardest part of writing a tech resume for you?\n\n#SoftwareEngineer #CareerTips",
+    "fa": "رکرویترها فقط چند ثانیه به رزومه شما نگاه می‌کنند. لیست کردن تکنالوژی‌های بی‌ربط را متوقف کنید و شروع کنید به نشان دادن تاثیر واقعی کودتان! 💻✨\n\nبرای شما سخت‌ترین بخش نوشتن یک رزومه تخنیکی چیست؟\n\n#SoftwareEngineer #CareerTips",
+    "ps": "رکریوټرز ستاسو ریزوم یوازې په څو ثانیو کې ګوري. د بې ځایه ټیک سټیکونو لسٹ کول بند کړئ او د خپل کوډ اصلي تاثیر وښایاست! 💻✨\n\nتاسو ته د ټیک ریزوم لیکلو کې ترټولو سخته برخه کومه ښکاري؟\n\n#SoftwareEngineer #CareerTips"
+  },
+  "control_message_id": 218
+}
