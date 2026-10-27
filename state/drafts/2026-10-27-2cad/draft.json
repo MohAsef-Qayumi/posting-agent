@@ -1,7 +1,7 @@
 {
   "id": "2026-10-27-2cad",
   "created": "2026-10-27T01:09:39+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Career",
   "topic": "How to structure a developer resume that actually gets past recruiters and lands interviews",
   "idea": "",
@@ -70,11 +70,36 @@
     "slide_04.jpg",
     "slide_05.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7520789088656834561/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122107248279516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/De_nOTSF70M/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/De_nR44kYx4"
+    }
+  },
   "facebook_texts": {
     "en": "Recruiters only spend a few seconds looking at your resume. Stop listing random tech stacks and start showing the real impact of your code! 💻✨\n\nWhat is the hardest part of writing a tech resume for you?\n\n#SoftwareEngineer #CareerTips",
     "fa": "رکرویترها فقط چند ثانیه به رزومه شما نگاه می‌کنند. لیست کردن تکنالوژی‌های بی‌ربط را متوقف کنید و شروع کنید به نشان دادن تاثیر واقعی کودتان! 💻✨\n\nبرای شما سخت‌ترین بخش نوشتن یک رزومه تخنیکی چیست؟\n\n#SoftwareEngineer #CareerTips",
     "ps": "رکریوټرز ستاسو ریزوم یوازې په څو ثانیو کې ګوري. د بې ځایه ټیک سټیکونو لسٹ کول بند کړئ او د خپل کوډ اصلي تاثیر وښایاست! 💻✨\n\nتاسو ته د ټیک ریزوم لیکلو کې ترټولو سخته برخه کومه ښکاري؟\n\n#SoftwareEngineer #CareerTips"
   },
-  "control_message_id": 218
+  "control_message_id": 218,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122107247979516061",
+    "122107248045516061",
+    "122107248093516061",
+    "122107248177516061",
+    "122107248231516061"
+  ]
 }
