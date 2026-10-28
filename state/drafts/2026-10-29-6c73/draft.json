@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-29-6c73",
+  "created": "2026-10-29T00:57:04+05:00",
+  "status": "pending",
+  "pillar": "Startup",
+  "topic": "Why the best startup products start with annoying everyday problems",
+  "idea": "",
+  "post": {
+    "topic": "Why the best startup products start with annoying everyday problems",
+    "linkedin_text": "Most failed startups try to build a revolutionary product nobody actually needs.\n\nAt JAEXS Solutions, we take the opposite approach. We look for frustrating, everyday inefficiencies that people just accept as normal.\n\n→ If it annoys you daily, it probably annoys others.\n→ If it has a manual workaround, there is a market.\n→ If the fix is simple, build it fast.\n\nBuilding in public means sharing these small wins and boring problems as we solve them. You do not need a billion-dollar idea to start building. You just need a real friction point.\n\nWhat everyday annoyance are you tempted to code a fix for?\n\n#StartupJourney #BuildInPublic #SoftwareEngineering #ProblemSolving #FullStackDeveloper",
+    "facebook_text": "Stop waiting for a billion-dollar idea to start your startup. At JAEXS Solutions, we focus on fixing the boring, everyday annoyances people just deal with. If it frustrates you daily, someone else will pay to fix it too! 🚀\n\nWhat manual task are you tired of doing?\n\n#BuildInPublic #StartupLife",
+    "threads_text": "Stop waiting for a massive startup idea. The best products come from fixing annoying everyday problems.\n\nAt JAEXS Solutions, we look for manual friction points that people just accept as normal. Build a simple tool, test it fast, and iterate.\n\nWhat daily annoyance are you tired of?",
+    "instagram_caption": "Stop waiting for a massive startup idea. The best products usually come from fixing small, annoying everyday problems.\n\nAt JAEXS Solutions, we focus on the friction points people just accept as normal.\n\n• Look for manual tasks you hate doing\n• Build the simplest possible version\n• Test it in the real world\n• Iterate based on actual feedback\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "fullstackdeveloper",
+      "webdevelopment",
+      "softwareengineer",
+      "flutterdev",
+      "pythondeveloper",
+      "programminglife",
+      "coderlife",
+      "startupjourney",
+      "buildinpublic",
+      "solofounder",
+      "entrepreneurmindset",
+      "problem101",
+      "techstartup",
+      "developerlife",
+      "coding"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Stop chasing *billion-dollar* ideas for your startup",
+        "body": "Why everyday annoyances make the best products.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Look for daily friction",
+        "body": "If a repetitive task annoys you every single day, it is likely annoying hundreds of other developers or users too.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Embrace the boring fix",
+        "body": "You do not need AI or deep tech to build a startup. Simple, reliable solutions to real problems win every time.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Build in public",
+        "body": "Share your process at JAEXS Solutions. Showing how you tackle small bugs and design choices builds genuine trust.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev & startup tips",
+    "alt_text": "Carousel slides explaining why everyday problems make the best startup products for developers building in public.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Startup"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Stop waiting for a billion-dollar idea to start your startup. At JAEXS Solutions, we focus on fixing the boring, everyday annoyances people just deal with. If it frustrates you daily, someone else will pay to fix it too! 🚀\n\nWhat manual task are you tired of doing?\n\n#BuildInPublic #StartupLife",
+    "fa": "منتظر نباشی که یک آیڈیا میلیاردی پیدا کنی تا استارتاپت را شروع کنی. ما در JAEXS Solutions تمرکز خود را روی حل کردن همین مشکلات و دردسرهای خسته‌کننده روزمره ماندیم که مردم به زور تحملشان می‌کنند. اگر چیزی روزانه تو را عصبانی می‌کند، حتماً کس دیگری هم حاضر است پول بدهد تا حلش کند! 🚀\n\nشما از انجام دادن کدام کار دستی (manual) خسته شدید؟\n\n#BuildInPublic #StartupLife",
+    "ps": "د یو بلین ډالره اېډیا انتظار مه کوئ چې خپل سټارټ اپ پیل کړئ. موږ په JAEXS Solutions کې په دې تمرکز کوو چې هغه ستړي کونکي او د هره ورځ ستونزې هوارې کړو چې خلک یې زغمي. که یو شی تاسو هره ورځ خپه کوي، بل څوک هم پیسې ورکوي چې هوار یې کړي! 🚀\n\nتاسو د کوم مینوئل کار په کولو ستړي شوي یاست؟\n\n#BuildInPublic #StartupLife"
+  },
+  "control_message_id": 231
+}
