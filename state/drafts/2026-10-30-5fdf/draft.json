@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-30-5fdf",
+  "created": "2026-10-30T00:52:00+05:00",
+  "status": "pending",
+  "pillar": "Code",
+  "topic": "Clean State Management Pattern in Flutter using ValueNotifier",
+  "idea": "",
+  "post": {
+    "topic": "Clean State Management Pattern in Flutter using ValueNotifier",
+    "linkedin_text": "Stop overcomplicating state management in medium Flutter apps.\n\nYou do not always need a massive BLoC setup for simple UI states.\n\nValueNotifier is built right into Flutter, lightweight, and requires zero boilerplate.\n\n→ Create a controller extending ValueNotifier\n→ Wrap your widget in a ValueListenableBuilder\n→ Update the value and trigger targeted rebuilds\n\nIt keeps your code readable and performs surprisingly well for isolated component states.\n\nWhat is your go-to state management tool for small projects?\n\n#Flutter #MobileDevelopment #Dart #WebDev #FullStack",
+    "facebook_text": "Stop overcomplicating state management in medium Flutter apps with heavy boilerplate. ValueNotifier is built right in, lightweight, and perfect for isolated component states! 🚀📱\n\nWhat is your go-to state management tool for small projects?\n\n#Flutter #MobileDev",
+    "threads_text": "Stop overcomplicating state management in Flutter with heavy boilerplate.\n\nValueNotifier is built right in, lightweight, and perfect for isolated component states without extra packages.\n\nWhat state tool do you use for small apps?\n\n#flutter",
+    "instagram_caption": "Stop overcomplicating state management in medium Flutter apps.\n\n📱 You do not always need a massive BLoC setup for simple UI states.\n⚡ ValueNotifier is built right into Flutter and needs zero boilerplate.\n🎯 Perfect for isolated component states and clean codebases.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "flutter",
+      "flutterdev",
+      "dart",
+      "mobiledev",
+      "programming",
+      "coding",
+      "webdev",
+      "fullstack",
+      "softwareengineer",
+      "appdevelopment",
+      "cleancode",
+      "devtips",
+      "javascript",
+      "python",
+      "developers"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Stop Overcomplicating *Flutter* State",
+        "body": "Use ValueNotifier for lightweight, zero-boilerplate component state.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "The Problem with Heavy State",
+        "body": "Using complex state management libraries for simple local UI toggles adds unnecessary boilerplate and slows down feature delivery.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "code",
+        "title": "The ValueNotifier Approach",
+        "body": "Create a simple controller and listen directly in the widget tree.",
+        "code": "class CounterController \n    extends ValueNotifier<int> {\n  CounterController() : super(0);\n  \n  void increment() => value++;\n}",
+        "language": "dart"
+      },
+      {
+        "kind": "code",
+        "title": "Consuming the State Cleanly",
+        "body": "Use ValueListenableBuilder to rebuild only the targeted widget.",
+        "code": "ValueListenableBuilder<int>(\n  valueListenable: controller,\n  builder: (context, count, _) {\n    return Text('$count');\n  },\n)",
+        "language": "dart"
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "Carousel explaining how to use ValueNotifier for clean and lightweight state management in Flutter apps.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Code"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Stop overcomplicating state management in medium Flutter apps with heavy boilerplate. ValueNotifier is built right in, lightweight, and perfect for isolated component states! 🚀📱\n\nWhat is your go-to state management tool for small projects?\n\n#Flutter #MobileDev",
+    "fa": "بیautify نکنید و state management را در پروژه‌های متوسط Flutter با بویلرپلیت‌های زیاد پیچیده نسازید. ValueNotifier به شکل پیش‌فرض موجود است، بسیار سبک است و برای stateهای کامپوننت‌های جداگانه فوق‌العاده است! 🚀📱\n\nشما برای پروژه‌های کوچک معمولاً از کدام تولز برای state management استفاده می‌کنید؟\n\n#Flutter #MobileDev",
+    "ps": "په medium Flutter اپلیکیشنونو کې د ډیر پیچلي boilerplate په واسطه د state management مسله مه ستونزمنوئ. ValueNotifier خپله په Flutter کې شته، سپک دی، او د جلا component states لپاره تر ټولو غوره دی! 🚀📱\n\nتاسو د کوچنیو پروژو لپاره کوم state management کاروئ؟\n\n#Flutter #MobileDev"
+  },
+  "control_message_id": 244
+}
