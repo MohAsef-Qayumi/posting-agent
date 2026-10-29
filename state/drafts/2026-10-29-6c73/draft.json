@@ -1,7 +1,7 @@
 {
   "id": "2026-10-29-6c73",
   "created": "2026-10-29T00:57:04+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Startup",
   "topic": "Why the best startup products start with annoying everyday problems",
   "idea": "",
@@ -70,11 +70,36 @@
     "slide_04.jpg",
     "slide_05.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7521612852697423872/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122108384397516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/DfFdz1GFJml/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/DfFd2S8lO9b"
+    }
+  },
   "facebook_texts": {
     "en": "Stop waiting for a billion-dollar idea to start your startup. At JAEXS Solutions, we focus on fixing the boring, everyday annoyances people just deal with. If it frustrates you daily, someone else will pay to fix it too! 🚀\n\nWhat manual task are you tired of doing?\n\n#BuildInPublic #StartupLife",
     "fa": "منتظر نباشی که یک آیڈیا میلیاردی پیدا کنی تا استارتاپت را شروع کنی. ما در JAEXS Solutions تمرکز خود را روی حل کردن همین مشکلات و دردسرهای خسته‌کننده روزمره ماندیم که مردم به زور تحملشان می‌کنند. اگر چیزی روزانه تو را عصبانی می‌کند، حتماً کس دیگری هم حاضر است پول بدهد تا حلش کند! 🚀\n\nشما از انجام دادن کدام کار دستی (manual) خسته شدید؟\n\n#BuildInPublic #StartupLife",
     "ps": "د یو بلین ډالره اېډیا انتظار مه کوئ چې خپل سټارټ اپ پیل کړئ. موږ په JAEXS Solutions کې په دې تمرکز کوو چې هغه ستړي کونکي او د هره ورځ ستونزې هوارې کړو چې خلک یې زغمي. که یو شی تاسو هره ورځ خپه کوي، بل څوک هم پیسې ورکوي چې هوار یې کړي! 🚀\n\nتاسو د کوم مینوئل کار په کولو ستړي شوي یاست؟\n\n#BuildInPublic #StartupLife"
   },
-  "control_message_id": 231
+  "control_message_id": 231,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122108384151516061",
+    "122108384199516061",
+    "122108384247516061",
+    "122108384295516061",
+    "122108384361516061"
+  ]
 }
