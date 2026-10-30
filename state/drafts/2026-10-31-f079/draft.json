@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-31-f079",
+  "created": "2026-10-31T00:46:09+05:00",
+  "status": "pending",
+  "pillar": "Engagement",
+  "topic": "Frontend state management choice in modern web and mobile apps",
+  "idea": "",
+  "post": {
+    "topic": "Frontend state management choice in modern web and mobile apps",
+    "linkedin_text": "Is Redux still worth using in 2026?\n\nFor years, adding Redux was the default first step for any React project. Boilerplate piled up before the first feature even worked.\n\nToday, tools like React Context, Zustand, and Flutter's Provider or Riverpod let us build apps much faster without the ceremony.\n\nYet some large codebases still swear by strict global stores.\n\n→ Simple state needs simple tools.\n→ Global stores are rarely needed early on.\n\nWhat is your go-to state management tool for new projects right now?\n\nsoftwaredevelopment webdevelopment mobiledev fullstack programming\n\n#programming #webdevelopment #softwareengineer #flutterdev",
+    "facebook_text": "Are you still using heavy global state management for new apps, or keeping it simple with local state and lightweight tools? 🤔 Let me know what you use! 💻\n\nwebdev flutter",
+    "threads_text": "Redux vs Zustand vs Riverpod. State management has gotten way simpler, but opinions are still all over the place. What is your absolute favorite state management tool right now and why? 👇\n\nwebdev",
+    "instagram_caption": "Are you still reaching for heavy global state management on day one?\n\n📱 Most apps don't need complex stores early on\n⚡️ Lightweight tools like Zustand or Riverpod save hours of boilerplate\n🛠️ Match the tool complexity to the actual app scale\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "webdevelopment",
+      "softwareengineer",
+      "flutterdev",
+      "reactjs",
+      "pythondev",
+      "fullstackdeveloper",
+      "codinglife",
+      "developer",
+      "techcommunity",
+      "softwaredev",
+      "javascript",
+      "mobiledevelopment",
+      "frontend",
+      "backend"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Stop overcomplicating *State Management*",
+        "body": "When to use simple tools vs heavy global stores.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Start local first",
+        "body": "Keep state inside the component until multiple distant components actually need it. Avoid premature global architecture.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Embrace lightweight libraries",
+        "body": "Tools like Zustand in React or Riverpod in Flutter remove boilerplate while keeping your code clean and scalable.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "The danger of Redux everywhere",
+        "body": "Using massive global state stores for simple UI toggles or form inputs wastes time and slows down feature delivery.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Drop your favorite tool in the comments",
+    "alt_text": "Carousel slides discussing modern state management choices for web and mobile developers.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Engagement"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Are you still using heavy global state management for new apps, or keeping it simple with local state and lightweight tools? 🤔 Let me know what you use! 💻\n\nwebdev flutter",
+    "fa": "آya hanooz ham baraye app-ha-ye jadid az state management-ha-ye sangin-e global estefadad mikonin, ya ba local state wa tool-ha-ye sabok kar-ra sade migirin? 🤔\n\nBegin ke shoma az chi estefadad mikonin! 💻\n\n#webdev #flutter",
+    "ps": "آیا لا هم د نویو اپونو لپاره له heavy ګلوبل سټېټ مېنېجمنټ څخه کار اخلئ، که په local سټېټ او سپکو ټूलونو سره یې ساده ساتئ؟ 🤔\n\nراته کینټ کئ چې تاسې کوم یو کاروئ! 💻\n\n#webdev #flutter"
+  },
+  "control_message_id": 256
+}
