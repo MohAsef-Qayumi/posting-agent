@@ -1,0 +1,80 @@
+{
+  "id": "2026-10-31-9ed3",
+  "created": "2026-10-31T23:49:32+05:00",
+  "status": "pending",
+  "pillar": "Engagement",
+  "topic": "Frontend state management choice in modern web apps",
+  "idea": "",
+  "post": {
+    "topic": "Frontend state management choice in modern web apps",
+    "linkedin_text": "Is Redux still necessary for most modern web apps in 2026?\n\nWe often default to heavy state management libraries out of habit rather than actual project requirements.\n\nBetween React Server Components, URL query params, and lightweight alternatives like Zustand or Signals, global state stores are needed far less often than before.\n\n→ Complex global trees add boilerplate.\n→ Local state and URL state solve most UI needs.\n→ Pick tools based on app scale, not hype.\n\nWhat is your go-to state management approach for new React or full-stack projects lately?\n\nWebDevelopment, ReactJS, FrontendDevelopment, FullStack, SoftwareEngineering\n\n#programming #webdevelopment #frontend #reactjs",
+    "facebook_text": "Do we still need heavy state management libraries for most web apps today, or are built-in tools and simpler options enough? 🤔 What is your default choice for new projects?\n\nWebDev, ReactJS, Frontend",
+    "threads_text": "Do we actually still need Redux for most modern web apps? Between server components, URL state, and lightweight tools, global stores feel like overkill for 80 percent of projects. What state management tool do you reach for first?",
+    "instagram_caption": "Are we still overcomplicating frontend state management?\n\n⚡️ React Server Components handle server data\n⚡️ URL params manage shareable UI state\n⚡️ Zustand or Context cover local needs\n\nMost apps do not need a massive global store on day one. Keep your architecture lean.\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "webdevelopment",
+      "frontend",
+      "reactjs",
+      "fullstack",
+      "javascript",
+      "typescript",
+      "webdev",
+      "softwareengineer",
+      "coding",
+      "developerlife",
+      "techcommunity",
+      "buildinpublic",
+      "webdesign",
+      "software"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Do we still need *Redux* today?",
+        "body": "Re-evaluating state management choices for modern full-stack web applications.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "The Default Trap",
+        "body": "Adding complex global state libraries out of habit before the app actually requires cross-component syncing.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Modern Alternatives",
+        "body": "React Server Components, URL query parameters, and signals solve 80 percent of UI state needs with zero boilerplate.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "code",
+        "title": "Keep It Local",
+        "body": "Use simple local hooks and props until global state is strictly necessary.",
+        "code": "const [isOpen, setIsOpen] = useState(false);\n// Simple local state\n// No store required",
+        "language": "javascript"
+      }
+    ],
+    "cta": "Share your stack in the comments",
+    "alt_text": "Carousel slides discussing whether heavy state management libraries are still necessary in modern web development.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Engagement"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Do we still need heavy state management libraries for most web apps today, or are built-in tools and simpler options enough? 🤔 What is your default choice for new projects?\n\nWebDev, ReactJS, Frontend",
+    "fa": "آیا واقعاً در اپلیکیشن‌های وب امروزی هنوز به لایبری‌های سنگین state management ضرورت داریم، یا اینکه توول‌های خودِ ریکت و آپشن‌های ساده‌تر بس است؟ 🤔\n\nانتخاب پیش‌فرض شما برای پرژه‌های جدید چیست؟\n\n#WebDev #ReactJS #Frontend",
+    "ps": "آیا واقعاً نن د ډېرو web apps لپاره heavy state management libraries ته اړتیا شته، که built-in tools او ساده آپشنونه بس دي؟ 🤔\n\nتاسو د نویو پروژو لپاره په عمومي توګه کوم یو انتخابوئ؟\n\n#WebDev #ReactJS #Frontend"
+  },
+  "control_message_id": 268
+}
