@@ -1,7 +1,7 @@
 {
   "id": "2026-10-30-5fdf",
   "created": "2026-10-30T00:52:00+05:00",
-  "status": "pending",
+  "status": "expired",
   "pillar": "Code",
   "topic": "Clean State Management Pattern in Flutter using ValueNotifier",
   "idea": "",
