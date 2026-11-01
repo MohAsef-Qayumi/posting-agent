@@ -1,0 +1,80 @@
+{
+  "id": "2026-11-02-30da",
+  "created": "2026-11-02T00:16:37+05:00",
+  "status": "pending",
+  "pillar": "AI",
+  "topic": "The hidden token cost of heavy JavaScript frameworks when sending codebases to LLMs",
+  "idea": "",
+  "post": {
+    "topic": "The hidden token cost of heavy JavaScript frameworks when sending codebases to LLMs",
+    "linkedin_text": "Heavy JavaScript frameworks are costing you way more than just performance.\n\nWhen you drop an entire component-heavy framework codebase into an LLM context window to generate code or debug, you are paying a massive token tax.\n\nBoilerplate wrapper code, nested abstraction layers, and complex build configs eat through context limits fast. The model spends tokens processing framework overhead instead of your actual business logic.\n\n→ Strip out unnecessary wrapper layers before prompting.\n→ Feed explicit file paths instead of entire directory dumps.\n→ Write lean, targeted context prompts to get accurate outputs.\n\nClean architecture isn't just about runtime speed anymore. It keeps your AI workflows efficient, too.\n\nHow do you keep your context windows clean when working with large codebases?\n\n#JavaScript #WebDevelopment #ArtificialIntelligence #SoftwareEngineering #FullStack",
+    "facebook_text": "Ever notice how dumping a heavy JavaScript framework into an AI context window burns through tokens instantly? Framework boilerplate and deep abstraction layers waste valuable context space on wrapper code instead of your logic. Keep your prompts lean and targeted! 🚀💻\n\nHow do you manage your AI context limits?\n\n#WebDev #ArtificialIntelligence",
+    "threads_text": "Heavy JS frameworks are quietly draining your AI token limits. When you dump an abstraction-heavy codebase into an LLM, you pay a massive token tax on boilerplate wrapper code. Feed targeted file paths instead of whole directories. How do you keep your prompts lean? #webdev",
+    "instagram_caption": "Heavy JavaScript frameworks are eating your AI tokens.\n\n⚡ Framework boilerplate wastes valuable context space\n🤖 LLMs process wrapper code instead of your actual logic\n📁 Feed specific file paths instead of entire directory dumps\n🎯 Keep prompts lean for accurate, targeted code generation\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "javascript",
+      "webdevelopment",
+      "artificialintelligence",
+      "softwareengineering",
+      "fullstack",
+      "reactjs",
+      "codingtips",
+      "developerlife",
+      "programming",
+      "techcommunity",
+      "codequality",
+      "aiintegration",
+      "webdev",
+      "softwaredeveloper",
+      "productivity"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "The *AI Token Cost* of Heavy JavaScript Frameworks",
+        "body": "Why your framework choice impacts your AI workflow efficiency.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "The Hidden Token Tax",
+        "body": "Deep abstraction layers and framework boilerplate code consume massive amounts of your LLM context window before the AI even sees your logic.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Targeted Context Over Dumps",
+        "body": "Never paste entire project directories into prompts. Isolate the relevant components and utility functions to save tokens and improve accuracy.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "code",
+        "title": "Keep Prompts Lean",
+        "body": "Pass explicit file paths and clean snippets to get better code suggestions.",
+        "code": "// Bad: Dumping whole tree\n// AI processes 10k lines of config\n\n// Good: Target specific file\n// Focus on the core function logic\nfunction calculateTotal(items) {\n  return items.reduce((sum, i) => sum + i.price, 0);\n}",
+        "language": "javascript"
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A carousel post explaining how heavy JavaScript frameworks increase AI token consumption and how developers can optimize their prompts.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "AI"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Ever notice how dumping a heavy JavaScript framework into an AI context window burns through tokens instantly? Framework boilerplate and deep abstraction layers waste valuable context space on wrapper code instead of your logic. Keep your prompts lean and targeted! 🚀💻\n\nHow do you manage your AI context limits?\n\n#WebDev #ArtificialIntelligence",
+    "fa": "әххр, پам kaden e yak framework e giran e JavaScript laxdar da yak context window e AI четрor token-ha-ra yaksara mesozanad? Boilerplate-ha wa layer-ha-i amigh e abstraction jay-i baha-i context-ra ba code-i wrapper zaya mesazanand na ba logic-i shuma. Prompt-ha-i xud-ra lean wa targeted nigah dared! 🚀💻\n\nShuma limit-ha-i context-ra chطور manage mesaned?\n\n#WebDev #ArtificialIntelligence",
+    "ps": "کله مو پام شوی چې په AI context window کې د یوه درانده JavaScript framework اچول څومره ژر tokens خلاصوي؟ د framework boilerplate او ژور abstraction layers ستاسو د اصلي logic پر ځای په wrapper code باندې د context ارزښتناکه فضا ضایع کوي. خپل prompts تل سپک او هدفمند وساتئ! 🚀💻\n\nتاسو د AI context limits څنګه manage کوئ؟\n\n#WebDev #ArtificialIntelligence"
+  },
+  "control_message_id": 282
+}
