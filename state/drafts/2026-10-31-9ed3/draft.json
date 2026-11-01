@@ -1,7 +1,7 @@
 {
   "id": "2026-10-31-9ed3",
   "created": "2026-10-31T23:49:32+05:00",
-  "status": "pending",
+  "status": "published",
   "pillar": "Engagement",
   "topic": "Frontend state management choice in modern web apps",
   "idea": "",
@@ -70,11 +70,36 @@
     "slide_04.jpg",
     "slide_05.jpg"
   ],
-  "results": {},
+  "results": {
+    "linkedin": {
+      "ok": true,
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7522462624345714688/"
+    },
+    "facebook": {
+      "ok": true,
+      "url": "https://www.facebook.com/1441786579013400_122109365967516061"
+    },
+    "instagram": {
+      "ok": true,
+      "url": "https://www.instagram.com/p/DfLgQM7jVqK/"
+    },
+    "threads": {
+      "ok": true,
+      "url": "https://www.threads.com/@mohammadasefqayumi/post/DfLgS0SHP1B"
+    }
+  },
   "facebook_texts": {
     "en": "Do we still need heavy state management libraries for most web apps today, or are built-in tools and simpler options enough? 🤔 What is your default choice for new projects?\n\nWebDev, ReactJS, Frontend",
     "fa": "آیا واقعاً در اپلیکیشن‌های وب امروزی هنوز به لایبری‌های سنگین state management ضرورت داریم، یا اینکه توول‌های خودِ ریکت و آپشن‌های ساده‌تر بس است؟ 🤔\n\nانتخاب پیش‌فرض شما برای پرژه‌های جدید چیست؟\n\n#WebDev #ReactJS #Frontend",
     "ps": "آیا واقعاً نن د ډېرو web apps لپاره heavy state management libraries ته اړتیا شته، که built-in tools او ساده آپشنونه بس دي؟ 🤔\n\nتاسو د نویو پروژو لپاره په عمومي توګه کوم یو انتخابوئ؟\n\n#WebDev #ReactJS #Frontend"
   },
-  "control_message_id": 268
+  "control_message_id": 268,
+  "facebook_lang": "ps",
+  "photo_ids": [
+    "122109365709516061",
+    "122109365763516061",
+    "122109365823516061",
+    "122109365871516061",
+    "122109365931516061"
+  ]
 }
