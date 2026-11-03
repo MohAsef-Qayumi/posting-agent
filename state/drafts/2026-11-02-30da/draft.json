@@ -1,7 +1,7 @@
 {
   "id": "2026-11-02-30da",
   "created": "2026-11-02T00:16:37+05:00",
-  "status": "pending",
+  "status": "expired",
   "pillar": "AI",
   "topic": "The hidden token cost of heavy JavaScript frameworks when sending codebases to LLMs",
   "idea": "",
