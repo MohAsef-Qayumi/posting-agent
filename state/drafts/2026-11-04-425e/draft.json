@@ -1,0 +1,88 @@
+{
+  "id": "2026-11-04-425e",
+  "created": "2026-11-04T01:42:19+05:00",
+  "status": "pending",
+  "pillar": "Tech",
+  "topic": "API privacy and hidden telemetry in developer tools",
+  "idea": "",
+  "post": {
+    "topic": "API privacy and hidden telemetry in developer tools",
+    "linkedin_text": "Are your API tools secretly sharing your data? Recent discoveries around unexpected auto-installed plugins in tools like Postman are a wake-up call for developers.\n\nWe install utilities for convenience. But convenience often comes with background data sharing we never agreed to.\n\nHere is how to protect your workspace:\n\n→ Audit your installed plugins and extensions monthly.\n→ Monitor outbound network traffic from your development environment.\n→ Read the changelogs before updating mission-critical tools.\n→ Use local-first or open-source alternatives when handling sensitive client data.\n\nYour API payloads belong to you and your clients. Don't let silent background defaults compromise your security.\n\nWhat steps do you take to secure your local development stack?\n\n#SoftwareSecurity #WebDevelopment #DeveloperTools #Privacy #FullStack",
+    "facebook_text": "Are your favorite development tools secretly sharing your data? 🛑 Silent auto-installations and background telemetry are becoming a real concern for developers handling sensitive API payloads. Always audit your plugins and check your network traffic!\n\nHow do you keep your dev environment secure? 💻\n\n#DevSecurity #CodingLife",
+    "threads_text": "Are your development tools silently sharing your API data? We blindly trust utilities for convenience, but background telemetry is getting out of hand. Time to audit those extensions and monitor your outbound traffic.\n\nHow often do you check your dev tool permissions?",
+    "instagram_caption": "Are your dev tools quietly sharing your data? 🛑\n\nMany developers install utilities for quick convenience without realizing what runs in the background. Protecting your API data starts locally.\n\n🔒 Audit extensions and plugins regularly\n📊 Monitor outbound network traffic\n📝 Read changelogs before major updates\n🛡️ Switch to transparent alternatives for sensitive projects\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "softwareengineering",
+      "webdevelopment",
+      "coding",
+      "developer",
+      "fullstack",
+      "javascript",
+      "python",
+      "flutter",
+      "security",
+      "privacy",
+      "devlife",
+      "techcommunity",
+      "softwaredeveloper",
+      "code"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "Is Your *API Tool* Secretly Sharing Your Data?",
+        "body": "Why silent telemetry in development software is a major risk.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "The Hidden Risk",
+        "body": "Many utilities auto-install AI features and plugins that may sync local API payloads to remote cloud servers without clear consent.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Audit Your Extensions",
+        "body": "Regularly review installed plugins in your IDE and API clients. Remove anything you do not explicitly use or trust.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Monitor Network Traffic",
+        "body": "Use tools like Wireshark or built-in proxy inspectors to check if your development environment is making unexpected outbound requests.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Choose Local First",
+        "body": "When working with sensitive client endpoints, prioritize open-source and local-first tools that respect your workspace privacy.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "A carousel slide guide on auditing development tools and protecting API data from hidden telemetry.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Tech"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg",
+    "slide_06.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Are your favorite development tools secretly sharing your data? 🛑 Silent auto-installations and background telemetry are becoming a real concern for developers handling sensitive API payloads. Always audit your plugins and check your network traffic!\n\nHow do you keep your dev environment secure? 💻\n\n#DevSecurity #CodingLife",
+    "fa": "ایا ابزارهای توسعه‌ی دلخواه‌تان پنهانی معلومات شما را شریک می‌سازند؟ 🛑 نصب‌های خودکارِ پنهانی و تیل‌متریِ پس‌زمینه برای دِوپرانی که با پلودهای حساس API کار می‌کنند، به یک تشویش جدی تبدیل شده است. همیشه پلگین‌هایتان را آودیت کنید و ترافیک شبکه‌ی تان را چک کنید!\n\nشما چطور محیطِ کُدنویسی تان را امن نگاه می‌دارید؟ 💻\n\n#DevSecurity #CodingLife",
+    "ps": "آیا ستاسو خوشې شوي development tools په پټه ستاسو ډېټا شریکوي؟ 🛑 Silent auto-installations او background telemetry اوس د هغو developer-انو لپاره په یوه لویه اندیښنه بدلېږي چې حساسو API payloads سره کار کوي. تل خپل plugins او network traffic چک کوئ!\n\nتاسو خپل dev environment څنګه خوندي ساتئ؟ 💻\n\n#DevSecurity #CodingLife"
+  },
+  "control_message_id": 307
+}
