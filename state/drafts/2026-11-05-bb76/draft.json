@@ -1,0 +1,81 @@
+{
+  "id": "2026-11-05-bb76",
+  "created": "2026-11-05T01:58:07+05:00",
+  "status": "pending",
+  "pillar": "Startup",
+  "topic": "Startup — Documenting the messy reality of building software solutions in public",
+  "idea": "",
+  "post": {
+    "topic": "Startup — Documenting the messy reality of building software solutions in public",
+    "linkedin_text": "Nobody tells you how lonely building a startup actually gets at first.\n\nAt JAEXS Solutions, we focus on finding generic, reusable solutions for everyday problems. But some days, the hardest part isn't writing the code. It is simply showing up and sharing the messy process.\n\nBuilding in public feels uncomfortable. You push code that isn't pretty. You talk about ideas that might fail. You share half-baked workflows.\n\n→ Share the bug, not just the fix.\n→ Document the failed approach, not just the architecture.\n→ Talk to potential users before your landing page is live.\n\nPerfectionism kills momentum faster than bad code ever will.\n\nHow do you keep yourself accountable when working on your own projects?\n\n#StartupJourney #BuildInPublic #SoftwareEngineering #Solopreneur #WebDevelopment",
+    "facebook_text": "Building a startup like JAEXS Solutions is rarely glamorous. Most days it's just solving annoying everyday problems and writing code that nobody sees yet. The secret is simply showing up and building in public. 💻\n\nHow do you keep yourself accountable on your side projects?\n\n#StartupLife #BuildInPublic",
+    "threads_text": "Building JAEXS Solutions in public taught me one thing: perfectionism is just fear in disguise. \n\nShare the messy code. Talk about the failed approaches. Nobody cares about the highlight reel as much as the real problem-solving process.\n\nHow do you beat the urge to hide until everything is perfect?\n\n#buildinpublic",
+    "instagram_caption": "Building a startup like JAEXS Solutions isn't about giant breakthroughs. It's about tackling annoying everyday problems one reusable solution at a time. \n\nHere is what I've learned about building in public:\n• Share the bug, not just the final fix\n• Document failed architectural approaches\n• Talk to users before the product looks pretty\n• Kill perfectionism before it kills momentum\n\n💾 Save this for later\nFollow @mohammadasefqayumi for daily tech, AI & career tips",
+    "hashtags": [
+      "programming",
+      "softwareengineer",
+      "webdevelopment",
+      "fullstack",
+      "python",
+      "javascript",
+      "flutterdev",
+      "reactjs",
+      "startupjourney",
+      "buildinpublic",
+      "solopreneur",
+      "developer",
+      "codinglife",
+      "techstartup",
+      "softwaredevelopment",
+      "freelancer"
+    ],
+    "slides": [
+      {
+        "kind": "cover",
+        "title": "The *Reality* of Building a Startup in Public",
+        "body": "Lessons learned while solving everyday problems with JAEXS Solutions.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Drop the Perfectionism",
+        "body": "Waiting for pristine code means you never ship. Share the messy drafts and the broken builds.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Focus on Real Problems",
+        "body": "At JAEXS Solutions, we look for annoying everyday problems that need generic, reusable fixes.",
+        "code": "",
+        "language": ""
+      },
+      {
+        "kind": "point",
+        "title": "Document the Failures",
+        "body": "Showing your failed architecture helps other developers more than a polished success story ever will.",
+        "code": "",
+        "language": ""
+      }
+    ],
+    "cta": "Follow for daily dev tips",
+    "alt_text": "Carousel slides detailing the reality of building a startup in public and sharing everyday problem-solving processes.",
+    "written_by": "gemini/gemini-flash-lite-latest",
+    "pillar": "Startup"
+  },
+  "images": [
+    "slide_01.jpg",
+    "slide_02.jpg",
+    "slide_03.jpg",
+    "slide_04.jpg",
+    "slide_05.jpg"
+  ],
+  "results": {},
+  "facebook_texts": {
+    "en": "Building a startup like JAEXS Solutions is rarely glamorous. Most days it's just solving annoying everyday problems and writing code that nobody sees yet. The secret is simply showing up and building in public. 💻\n\nHow do you keep yourself accountable on your side projects?\n\n#StartupLife #BuildInPublic",
+    "fa": "جوایز ساختن یک استارتاپ مثل JAEXS Solutions کم پیش میایه که گلوریا یا خیلی پرجلال و جبروت باشه. اکثر روزا فقط حل کردن مشکلات مسخره‌ی روزمره است و نویسی کودی که فعلاً هیچ‌کسی او را نمی‌بینه. راز اصلی تنها در همون حاضر شدن روزمره و عمومی ساختن کارا (build in public) است. 💻\n\nشما چطور خودکتان را در پروژه‌های شخصی‌تان پابند و مسئول نگه‌می‌دارین؟\n\n#StartupLife #BuildInPublic",
+    "ps": "د JAEXS Solutions په څېر د یو startup جوړول ډېر کله هغسې په زړه پورې نه وي لکه څنګه چې ښکاري. ډېری ورځې بس د ورځنیو سردردي راوړونکو ستونزو په حلولو او د داسې code په لیکلو تېرېږي چې لا تر اوسه یې هېڅوک نه ویني. اصلي راز یې بس دا دی چې دوام ورکړې او building in public وکړې. 💻\n\nتاسو په خپلو side projects کې خپل ځان څنګه ژمن او مسؤل ساتئ؟\n\n#StartupLife #BuildInPublic"
+  },
+  "control_message_id": 319
+}
